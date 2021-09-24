@@ -5,18 +5,6 @@
         <a href="/"><img src="img/logo2_231x.webp" class="" /></a>
       </div>
 
-      <div class="search">
-        <form action="/search" method="POST">
-          <input
-            class="search-input"
-            id="search"
-            type="text"
-            placeholder="Buscá tu producto"
-            submit="search"
-          />
-          <i class="search-icon fas fa-search"></i>
-        </form>
-      </div>
       <div class="nav__categories">
         <ul class="nav__ul">
           <li>
@@ -42,20 +30,29 @@
           </li>
         </ul>
       </div>
-      <div>
-        <ul class="main-nav" id="js-menu">
+
+      <div class="search">
+        <form action="/search" method="POST">
+          <input
+            class="search-input"
+            id="search"
+            type="text"
+            placeholder="Buscá tu producto"
+            submit="search"
+          />
+          <i class="search-icon fas fa-search"></i>
+        </form>
+      </div>
+
+      <div class="navbar__main">
+        <ul class="main__nav" id="js-menu">
           <li>
-            <a href="/login" class="nav-links">
-              <i class="far fa-user"><span>Login</span></i>
+            <a href="/login" class="nav__links">
+              <i class="far fa-user"><span class="link__span">Login</span></i>
             </a>
           </li>
           <li>
-            <a href="/register" class="nav-links">
-              <i class="far fa-user"><span>Register</span></i>
-            </a>
-          </li>
-          <li>
-            <a href="/cart" class="nav-links">
+            <a href="/cart" class="nav__links">
               <i class="fas fa-shopping-cart"></i>
             </a>
           </li>
