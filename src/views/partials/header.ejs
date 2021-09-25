@@ -1,4 +1,4 @@
-<header class="header">
+<header>
   <div class="navbar__container">
     <nav class="navbar">
       <div class="navbar__logo">
@@ -40,24 +40,24 @@
             placeholder="Buscá tu producto"
             submit="search"
           />
-          <i class="search-icon fas fa-search"></i>
+          <button type="submit">
+            <i class="search-icon fas fa-search"></i>
+          </button>
         </form>
       </div>
 
-      <div class="navbar__main">
-        <ul class="main__nav" id="js-menu">
-          <li>
-            <a href="/login" class="nav__links">
-              <i class="far fa-user"><span class="link__span">Login</span></i>
-            </a>
-          </li>
-          <li>
-            <a href="/cart" class="nav__links">
-              <i class="fas fa-shopping-cart"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul class="main__nav" id="js-menu">
+        <li>
+          <a href="/login" class="nav__links">
+            <i class="far fa-user"><span class="link__span">Login</span></i>
+          </a>
+        </li>
+        <li>
+          <a href="/cart" class="nav__links">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </li>
+      </ul>
     </nav>
   </div>
 </header>

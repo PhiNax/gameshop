@@ -1,6 +1,8 @@
 /* START MAIN INDEX */
 .body__index {
   background-image: url(/img/index-background-image.jpg);
+  object-fit: fill;
+  object-position: center center;
 }
 .main__index {
   width: 100vw;
