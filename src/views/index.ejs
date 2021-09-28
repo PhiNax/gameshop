@@ -4,17 +4,17 @@
     <%- include('partials/head') -%>
     <link rel="stylesheet" href="./css/index.css" type="text/css" />
   </head>
-
-  <%- include('partials/header') -%>
-
   <body class="body__index">
+    <%- include('partials/header') -%>
+
+    <div class="index__slider">
+      <img src="./img/slider/template-90.webp" alt="Diablo II Resurrected" />
+    </div>
+
     <main class="main__index">
-      <div class="slider">
-        <img src="./img/slider/template-90.webp" alt="" />
-      </div>
       <section class="bestseller__wrapper">
         <div class="bestseller__title">
-          <span>Mas vendidos</span>
+          <span class="title">Mas vendidos</span>
         </div>
 
         <div class="cards__container">
@@ -25,12 +25,75 @@
 
       <section class="bestseller__wrapper">
         <div class="bestseller__title">
-          <span>Mas Valorados</span>
+          <span class="title">Mas Valorados</span>
         </div>
 
         <div class="cards__container">
           <% products.forEach(function(products){ %> <%-
           include('partials/mainCard', {products}) %> <% }); %>
+        </div>
+      </section>
+
+      <section class="services">
+        <div class="services__card">
+          <div class="services__info">
+            <h3>Great Value</h3>
+            <span>
+              We offer competitive prices on our 100 million plus product range.
+            </span>
+          </div>
+          <div class="services__icon">
+            <img src="./img/services/icon1.png" alt="" />
+          </div>
+        </div>
+
+        <div class="services__card">
+          <div class="services__info">
+            <h3>Worldwide Delivery</h3>
+            <span>
+              With sites in 5 languages, we ship to over 200 countries &
+              regions.
+            </span>
+          </div>
+          <div class="services__icon">
+            <img src="./img/services/icon2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="services__card">
+          <div class="services__info">
+            <h3>Safe Payment</h3>
+            <span>
+              Pay with the world’s most popular and secure payment methods.
+            </span>
+          </div>
+          <div class="services__icon">
+            <img src="./img/services/icon3.png" alt="" />
+          </div>
+        </div>
+
+        <div class="services__card">
+          <div class="services__info">
+            <h3>Shop Whith Confidence</h3>
+            <span>
+              Our Buyer Protection covers your purchase from click to delivery.
+            </span>
+          </div>
+          <div class="services__icon">
+            <img src="./img/services/icon4.png" alt="" />
+          </div>
+        </div>
+
+        <div class="services__card">
+          <div class="services__info">
+            <h3>24/7 Help Center</h3>
+            <span>
+              Round-the-clock assistance for a smooth shopping experience.
+            </span>
+          </div>
+          <div class="services__icon">
+            <img src="./img/services/icon5.png" alt="" />
+          </div>
         </div>
       </section>
     </main>

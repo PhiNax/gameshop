@@ -3,7 +3,17 @@
   background: url(../img/bg-footer3.webp);
   padding: 15px;
 }
+.payment__content {
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  margin: 25px auto;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #999fa6;
+}
 .footer__main {
+  width: 80vw;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
 }
