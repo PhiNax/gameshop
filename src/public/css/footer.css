@@ -1,6 +1,7 @@
 /* START FOOTER */
 .footer {
   background: url(../img/bg-footer3.webp);
+  background-size: cover;
   padding: 15px;
 }
 .payment__content {

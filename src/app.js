@@ -8,6 +8,17 @@ const productsRouter = require('./routes/productsRoutes');
 // Call override method
 const methodOverride = require('method-override');
 
+// Import Swiper Slider Library module
+import Swiper, { Navigation, Pagination } from 'swiper';
+// Import Swiper CSS
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+// Configure Swiper to use modules
+Swiper.use([Navigation, Pagination]);
+// Init Swiper
+const swiper = new Swiper();
+
 // Build a express app
 const app = express();
 

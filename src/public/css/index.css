@@ -15,7 +15,7 @@
   height: auto;
 }
 .index__slider img {
-  object-fit: cover;
+  object-fit: fill;
   width: 100vw;
   height: auto;
 }
@@ -108,10 +108,11 @@
 }
 .services__info {
   text-align: center;
+  margin-bottom: 30px;
 }
 .services__icon {
   width: auto;
-  margin: auto;
+  margin: 0 auto;
 }
 .services__icon img {
   width: auto;

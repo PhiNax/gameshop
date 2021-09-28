@@ -3,17 +3,19 @@
   --blueC: #0e86ca;
 }
 /* HEADER NAV BAR */
-.navbar__container {
-  background-color: rgb(0, 38, 80);
-  border-bottom: 1px solid #999fa6;
-  padding-right: 15px;
-  padding-left: 15px;
+header {
+  position: sticky;
+  top: 0;
+  z-index: 12;
 }
-
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: rgb(0, 38, 80);
+  border-bottom: 1px solid #999fa6;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .nav__categories {

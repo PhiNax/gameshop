@@ -7,10 +7,24 @@
   <body class="body__index">
     <%- include('partials/header') -%>
 
-    <div class="index__slider">
-      <img src="./img/slider/template-90.webp" alt="Diablo II Resurrected" />
-    </div>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
 
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <!-- START MAIN Content -->
     <main class="main__index">
       <section class="bestseller__wrapper">
         <div class="bestseller__title">
@@ -33,7 +47,8 @@
           include('partials/mainCard', {products}) %> <% }); %>
         </div>
       </section>
-
+      <!-- ENDS MAIN Content -->
+      <!-- START Services Content -->
       <section class="services">
         <div class="services__card">
           <div class="services__info">
@@ -96,6 +111,7 @@
           </div>
         </div>
       </section>
+      <!-- ENDS Services Content -->
     </main>
     <%- include('partials/footer') -%>
   </body>
