@@ -7,23 +7,22 @@
   <body class="body__index">
     <%- include('partials/header') -%>
 
-    <!-- Slider main container -->
-    <div class="swiper">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        ...
+    <!-- START Slider Flickity -->
+    <div
+      class="main-carousel"
+      data-flickity='{ "cellAlign": "left", "contain": true }'
+    >
+      <div class="carousel-cell">
+        <img src="./img/slider/slider2.webp" alt="" />
       </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="carousel-cell">
+        <img src="./img/slider/slider3.webp" alt="" />
+      </div>
+      <div class="carousel-cell">
+        <img src="./img/slider/slider4.webp" alt="" />
+      </div>
     </div>
+    <!-- ENDS Slider Flickity -->
     <!-- START MAIN Content -->
     <main class="main__index">
       <section class="bestseller__wrapper">

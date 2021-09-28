@@ -1,6 +1,7 @@
 /* START MAIN INDEX */
 .body__index {
   background-color: #e6e8ea;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .main__index {
   width: 100vw;
@@ -19,6 +20,15 @@
   width: 100vw;
   height: auto;
 }
+
+.carousel-cell {
+  width: 100%; /* full width */
+  height: 700px; /* height of carousel */
+}
+.carousel-cell img {
+  width: 100%; /* full width */
+}
+
 /* ENDS SLIDER INDEX */
 
 /* BEST SELLER CONTENT */

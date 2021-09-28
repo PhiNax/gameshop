@@ -17,6 +17,21 @@
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  color: #fff;
+}
+.footer__link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+.footer__link li a {
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
 }
 /* ENDS FOOTER */
 
