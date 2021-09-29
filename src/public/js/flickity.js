@@ -1,16 +1,17 @@
-/* const elem = document.querySelector('.main-carousel');
+/*
+const elem = document.querySelector('.main-carousel');
+const elem1 = document.querySelector('.carousel-cell');
+console.log('funciona');
+console.log(elem);
+console.log(elem1);
+
 const flkty = new Flickity(elem, {
     // options
     cellAlign: 'left',
     contain: true
 });
 */
-var flkty = new Flickity('.main-carousel', {
-    cellAlign: 'left',
-    contain: true
-});
-
-// vanilla JS
+/* vanilla JS
 var flkty = new Flickity('.carousel', {
     on: {
         ready: function () {
@@ -21,3 +22,4 @@ var flkty = new Flickity('.carousel', {
         }
     }
 });
+*/

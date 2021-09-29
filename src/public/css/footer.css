@@ -7,16 +7,16 @@
 .payment__content {
   width: 80vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 25px auto;
   padding-bottom: 40px;
   border-bottom: 1px solid #999fa6;
 }
 .footer__main {
-  width: 80vw;
+  width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   color: #fff;
 }
 .footer__link {
@@ -37,7 +37,16 @@
 
 /* MEDIA QUERY*/
 @media screen and (min-width: 768px) {
+  .payment__content {
+    width: 100%;
+  }
+  .footer__main {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  .payment__content {
+    width: 80%;
+  }
 }
