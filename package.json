@@ -4,7 +4,8 @@
   "description": "Ecommerce de consolas y video juegos",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./src/app.js"
+    "start": "nodemon ./src/app.js",
+    "lunch": "node ./src/app.js"
   },
   "repository": {
     "type": "git",
