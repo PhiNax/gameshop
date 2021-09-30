@@ -53,7 +53,7 @@
   align-items: center;
 }
 .card__item {
-  width: 60vw;
+  width: 60%;
   height: auto;
   color: black;
   background: #fff;
@@ -124,7 +124,7 @@
   /* ENDS SLIDER INDEX */
   /* START MAIN INDEX */
   .main__index {
-    width: 100vw;
+    width: 100%;
   }
   .bestseller__title {
     font-size: 1.3rem;
@@ -169,7 +169,7 @@
   /* ENDS SLIDER INDEX */
   /* START MAIN INDEX */
   .main__index {
-    width: 80vw;
+    width: 80%;
     height: auto;
     margin: auto;
   }
