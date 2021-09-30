@@ -13,11 +13,13 @@
   border-bottom: 1px solid #999fa6;
 }
 .footer__main {
-  width: 100%;
+  width: 80vw;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   color: #fff;
+}
+.footer__block {
 }
 .footer__link {
   color: #fff;
@@ -47,6 +49,9 @@
 
 @media screen and (min-width: 1200px) {
   .payment__content {
+    width: 80%;
+  }
+  .footer__main {
     width: 80%;
   }
 }
