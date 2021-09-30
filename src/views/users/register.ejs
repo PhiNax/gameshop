@@ -2,12 +2,34 @@
 <html lang="es">
   <head>
     <%- include('../partials/head') -%>
+    <link rel="stylesheet" href="./css/register.css" type="text/css" />
   </head>
 
   <body>
     <%- include('../partials/header') -%>
-    <main>
-      <p>REGISTER</p>
+    <main class="main__register">
+      <div class="card__register">
+        <div><span>Register</span></div>
+        <form class="form__register" action="/register" method="post">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" />
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" />
+          <label for="email">Email</label>
+          <input type="email" name="email" />
+          <label for="password">Password</label>
+          <input type="password" name="password" />
+          <label for="password1">Repeat Password</label>
+          <input type="password" name="password1" />
+          <div>
+            <input type="checkbox" name="confirm" />
+            <label for="confirm">I agree with the terms and conditions</label>
+          </div>
+
+          <button type="submit" class="button__register">Register</button>
+        </form>
+        <div>Already Registered? <a href="/login">Login</a></div>
+      </div>
     </main>
     <%- include('../partials/footer') -%>
   </body>
