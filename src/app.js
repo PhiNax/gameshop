@@ -12,7 +12,7 @@ const methodOverride = require('method-override');
 const app = express();
 
 // Create PORT variable with process.env
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 6868;
 
 // Set public folder
 const staticFolder = path.resolve(__dirname, './public');
@@ -40,7 +40,6 @@ app.use('/', mainRouter);
 app.use('/products', productsRouter);
 
 // Config listening port
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port: ${PORT}`);
 })
-
