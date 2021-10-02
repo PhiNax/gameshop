@@ -33,7 +33,7 @@
   justify-content: space-between;
   flex-direction: column;
   list-style: none;
-  line-height: 1.6rem;
+  line-height: 2;
   padding: 0;
 }
 .footer__link li a {
