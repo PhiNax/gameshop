@@ -1,0 +1,118 @@
+.main__register {
+  width: 100%;
+  margin: 50px auto;
+  margin-bottom: 100px;
+}
+.card__register {
+  width: 80%;
+  height: auto;
+  border-top: 2px solid #09346c;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%),
+    0 0.9375rem 1.40625rem rgb(90 97 105 / 10%),
+    0 0.25rem 0.53125rem rgb(90 97 105 / 12%),
+    0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+}
+.form__register {
+  display: flex;
+  flex-flow: row wrap;
+}
+.form__title {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+.form__register input {
+  display: block;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+}
+.form__register label {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+.firstname {
+  width: 100%;
+  margin-top: 8px;
+}
+.firstname input {
+  width: 100%;
+  margin-top: 5px;
+}
+.lastname {
+  width: 100%;
+  margin-top: 8px;
+}
+.lastname input {
+  width: 100%;
+  margin-top: 5px;
+}
+.email {
+  width: 100%;
+  margin-top: 8px;
+}
+.email input {
+  width: 100%;
+  margin-top: 5px;
+}
+.password {
+  width: 100%;
+  margin-top: 8px;
+}
+.password input {
+  width: 100%;
+  margin-top: 5px;
+}
+.passwordC {
+  width: 100%;
+  margin-top: 8px;
+}
+.passwordC input {
+  width: 100%;
+  margin-top: 5px;
+}
+.form__terms {
+  display: flex;
+  padding: 10px;
+}
+.button__register {
+  background-color: #0c4591;
+  border-color: transparent;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 0 2px 6px #1f4d8a;
+}
+.form__login {
+  padding: 30px 0 5px 15px;
+  display: flex;
+  justify-content: center;
+}
+.form__login a {
+  padding-left: 5px;
+  text-decoration: none;
+  color: #0c4591;
+}
+
+/* MEDIA QUERY*/
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .card__register {
+    width: 50%;
+  }
+}
