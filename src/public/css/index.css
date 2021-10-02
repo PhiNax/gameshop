@@ -147,7 +147,6 @@
   .card__title {
     font-size: 1rem;
   }
-
   .services {
     justify-content: center;
     flex-flow: row wrap;
@@ -159,7 +158,6 @@
   }
   /* END MAIN INDEX */
 }
-/* ENDS FOOTER */
 @media screen and (min-width: 1200px) {
   /* START SLIDER INDEX */
   .carousel-cell {
