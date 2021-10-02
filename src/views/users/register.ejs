@@ -11,35 +11,38 @@
       <div class="card__register">
         <div class="form__title"><span>Register</span></div>
         <form class="form__register" action="/register" method="post">
-          <div>
+          <div class="firstname">
             <label for="firstName">First Name</label>
-            <input type="text" name="firstName" />
+            <input type="text" name="firstName" tabindex="13" />
           </div>
-          <div>
+          <div class="lastname">
             <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" />
+            <input type="text" name="lastName" tabindex="14" />
           </div>
-          <div>
+          <div class="email">
             <label for="email">Email</label>
-            <input type="email" name="email" />
+            <input type="email" name="email" tabindex="15" />
           </div>
-          <div>
+          <div class="password">
             <label for="password">Password</label>
-            <input type="password" name="password" />
+            <input type="password" name="password" tabindex="16" />
           </div>
-          <div>
-            <label for="password1">Repeat Password</label>
-            <input type="password" name="password1" />
+          <div class="passwordC">
+            <label for="passwordC">Repeat Password</label>
+            <input type="password" name="passwordC" tabindex="17 " />
           </div>
           <div class="form__terms">
-            <input type="checkbox" name="terms" />
+            <input type="checkbox" name="terms" tabindex="18" />
             <label for="terms">I agree with the terms and conditions</label>
           </div>
 
-          <button type="submit" class="button__register">Register</button>
+          <button type="submit" class="button__register" tabindex="19">
+            Register
+          </button>
         </form>
         <div class="form__login">
-          Already Registered? <a href="/login">Login</a>
+          <span>Already Registered?</span>
+          <a href="/login" tabindex="20">Login</a>
         </div>
       </div>
     </main>

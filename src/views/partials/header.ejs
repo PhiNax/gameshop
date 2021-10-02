@@ -1,31 +1,33 @@
 <header>
   <nav class="navbar">
     <div class="navbar__logo">
-      <a href="/"><img src="img/logo2_231x.webp" class="" /></a>
+      <a href="/"><img src="img/logo2_231x.webp" class="" tabindex="1" /></a>
     </div>
 
     <div class="nav__categories">
       <ul class="nav__ul">
         <li>
-          <a href="#" class="nav__categories__links"> Categorias </a>
+          <a href="#" class="nav__categories__links" tabindex="2">
+            Categorias
+          </a>
         </li>
         <li>
-          <a href="#" class="nav__categories__links"> Pc </a>
+          <a href="#" class="nav__categories__links" tabindex="3"> Pc </a>
         </li>
         <li>
-          <a href="#" class="nav__categories__links"> PS4 </a>
+          <a href="#" class="nav__categories__links" tabindex="4"> PS4 </a>
         </li>
         <li>
-          <a href="#" class="nav__categories__links"> PS5 </a>
+          <a href="#" class="nav__categories__links" tabindex="5"> PS5 </a>
         </li>
         <li>
-          <a href="#" class="nav__categories__links"> Xbox </a>
+          <a href="#" class="nav__categories__links" tabindex="6"> Xbox </a>
         </li>
         <li>
-          <a href="#" class="nav__categories__links"> Wii U </a>
+          <a href="#" class="nav__categories__links" tabindex="7"> Wii U </a>
         </li>
         <li>
-          <a href="#" class="nav__categories__links"> Switch </a>
+          <a href="#" class="nav__categories__links" tabindex="8"> Switch </a>
         </li>
       </ul>
     </div>
@@ -33,13 +35,14 @@
     <div class="search">
       <form action="/search" method="POST">
         <input
-          class="search-input"
+          class="search__input"
           id="search"
           type="text"
           placeholder="Buscá tu producto"
           submit="search"
+          tabindex="9"
         />
-        <button type="submit">
+        <button type="submit" tabindex="10">
           <i class="search-icon fas fa-search"></i>
         </button>
       </form>
@@ -47,12 +50,12 @@
 
     <ul class="main__nav" id="js-menu">
       <li>
-        <a href="/login" class="nav__links">
+        <a href="/login" class="nav__links" tabindex="11">
           <i class="far fa-user"><span class="link__span">Login</span></i>
         </a>
       </li>
       <li>
-        <a href="/cart" class="nav__links">
+        <a href="/cart" class="nav__links" tabindex="12">
           <i class="fas fa-shopping-cart"></i>
         </a>
       </li>
