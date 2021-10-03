@@ -5,6 +5,7 @@ const path = require('path');
 // Call routes
 const mainRouter = require('./routes/mainRoutes');
 const productsRouter = require('./routes/productsRoutes');
+const dashboardRouter = require('./routes/dashboardRoutes');
 // Call override method
 const methodOverride = require('method-override');
 
@@ -38,6 +39,8 @@ app.set('views', path.join(__dirname, './views'));
 app.use('/', mainRouter);
 // Products Routes for Admins
 app.use('/products', productsRouter);
+// Admin Dashboard
+app.use('/dashboard', dashboardRouter);
 // 404 Routes
 app.use((req, res, next) => {
     res.status(404).render('404-not-found');
@@ -45,6 +48,6 @@ app.use((req, res, next) => {
 });
 
 // Config listening port
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
 });
