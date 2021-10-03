@@ -56,7 +56,6 @@ const controller = {
     update: (req, res) => {
         // Do the magic
     },
-
     // Delete - Delete one product from DB
     destroy: (req, res) => {
         // Do the magic

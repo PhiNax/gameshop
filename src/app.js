@@ -36,10 +36,15 @@ app.set('views', path.join(__dirname, './views'));
 // Use Routes
 // Main Routes
 app.use('/', mainRouter);
-// Products Routers for Admins
+// Products Routes for Admins
 app.use('/products', productsRouter);
+// 404 Routes
+app.use((req, res, next) => {
+    res.status(404).render('not-found');
+    next();
+});
 
 // Config listening port
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port: ${PORT}`);
-})
+});
