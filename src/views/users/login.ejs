@@ -2,12 +2,40 @@
 <html lang="es">
   <head>
     <%- include('../partials/head') -%>
+    <link rel="stylesheet" href="./css/login.css" type="text/css" />
   </head>
 
   <body>
     <%- include('../partials/header') -%>
-    <main>
-      <p>LOGIN</p>
+    <main class="main__login">
+      <div class="card__login">
+        <div class="form__title"><span>Login</span></div>
+        <form class="form__login" action="/login" method="post">
+          <div class="email">
+            <label for="email">Email</label>
+            <input type="email" name="email" tabindex="13" />
+          </div>
+
+          <div class="password">
+            <label for="password">Password</label>
+            <label>Forgot Password?</label>
+            <input type="password" name="password" tabindex="14" />
+          </div>
+
+          <div class="form__remember">
+            <input type="checkbox" name="remember" tabindex="15" />
+            <label for="remember">Remember me</label>
+          </div>
+
+          <button type="submit" class="button__login" tabindex="16">
+            Login
+          </button>
+        </form>
+        <div class="form__login">
+          <span>Don't have an account?</span>
+          <a href="/login" tabindex="17">Create One</a>
+        </div>
+      </div>
     </main>
     <%- include('../partials/footer') -%>
   </body>
