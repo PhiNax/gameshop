@@ -1,5 +1,7 @@
 // Call express module
 const express = require('express');
+// Conect to DataBase
+require('./database/mongodb');
 // Call path module
 const path = require('path');
 // Call routes
@@ -37,10 +39,11 @@ app.set('views', path.join(__dirname, './views'));
 // Use Routes
 // Main Routes
 app.use('/', mainRouter);
-// Products Routes for Admins
-app.use('/products', productsRouter);
 // Admin Dashboard
 app.use('/dashboard', dashboardRouter);
+// Products Routes for Admins
+app.use('/products', productsRouter);
+
 // 404 Routes
 app.use((req, res, next) => {
     res.status(404).render('404-not-found');

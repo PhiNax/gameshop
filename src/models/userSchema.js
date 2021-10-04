@@ -6,8 +6,9 @@ const userSchema = new Schema({
     lastName: String,
     emial: String,
     password: String,
+    passwordC: String,
+    agreeTerm: Boolean,
     access: Number,
-    userImage: String
 });
 
 const User = model('user', userSchema);
