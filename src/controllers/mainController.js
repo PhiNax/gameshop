@@ -1,13 +1,9 @@
-// Call FileSystem module
-const fs = require('fs');
-// Call Path module
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../database/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+// Call result validation errors
+const { validationResult } = require('express-validator');
+// Call UserSchema for MongoDB
 const userSchema = require('../models/userSchema');
 
+// Create Main Controller
 const controller = {
     // Index
     index: (req, res) => {
@@ -39,20 +35,39 @@ const controller = {
         res.render('users/register');
     },
     // Create New User from form
-    createUser: (req, res) => {
-        const newUser = new userSchema({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            passwordC: req.body.passwordC,
-            agreeTerms: req.body.terms,
-            access: '1',
-        })
-        console.log(newUser);
-        newUser.save();
+    createUser: async (req, res) => {
+        console.log(req.body);
+        let errors = validationResult(req);
 
-        res.render('index', { products })
+        if (errors.isEmpty()) {
+
+            const password = req.body.password;
+            const passwordC = req.body.passwordC;
+
+            const newUser = new userSchema({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: req.body.password,
+                agreeTerms: req.body.terms,
+                access: '1',
+            })
+            console.log(newUser);
+
+            if (password === passwordC) {
+                await newUser.save()
+                    .then(() => {
+                        res.render('404-not-found');
+                    })
+                    .catch((error) => { console.log(error) })
+            } else {
+                console.log('password dont match')
+            }
+
+
+        } else {
+            res.render('users/register', { errors: errors.mapped(), old: req.body });
+        }
     }
 
 };

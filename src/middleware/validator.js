@@ -2,7 +2,7 @@ const { check } = require('express-validator');
 
 const validateRegister = [
     check('firstName')
-        .notEmpty().withMessage('Must complete your firstname')
+        .notEmpty().withMessage('Must complete your firstname').bail()
         .isLength({ min: 3 }).withMessage('Your firstname must contain minimium 3 characters'),
 
     check('lastName')
@@ -31,7 +31,7 @@ const validateRegister = [
 
 const validateLogin = [
     check('email')
-        .notEmpty().withMessage('Must complete your email')
+        .notEmpty().withMessage('Must complete your email').bail()
         .isEmail().withMessage('Must be a valid email'),
 
     check('password')

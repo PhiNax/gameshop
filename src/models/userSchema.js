@@ -4,10 +4,10 @@ const { model, Schema } = mongoose;
 const userSchema = new Schema({
     firstName: String,
     lastName: String,
-    emial: String,
+    email: String,
     password: String,
     passwordC: String,
-    agreeTerm: Boolean,
+    agreeTerms: String,
     access: Number,
 });
 

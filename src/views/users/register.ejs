@@ -11,17 +11,35 @@
       <div class="card__register">
         <div class="form__title"><span>Register</span></div>
         <form class="form__register" action="/register" method="post">
+          <% if (locals.errors && errors.name) { %>
+          <p class="feedback"><%= errors.name %></p>
+          <% } %>
           <div class="firstname">
             <label for="firstName">First Name</label>
-            <input type="text" name="firstName" tabindex="13" />
+            <input
+              type="text"
+              name="firstName"
+              tabindex="13"
+              value="<%= locals.old && old.firstname %>"
+            />
           </div>
           <div class="lastname">
             <label for="lastName">Last Name</label>
-            <input type="text" name="lastName" tabindex="14" />
+            <input
+              type="text"
+              name="lastName"
+              tabindex="14"
+              value="<%= locals.old && old.lastname %>"
+            />
           </div>
           <div class="email">
             <label for="email">Email</label>
-            <input type="email" name="email" tabindex="15" />
+            <input
+              type="email"
+              name="email"
+              tabindex="15"
+              value="<%= locals.old && old.email %>"
+            />
           </div>
           <div class="password">
             <label for="password">Password</label>

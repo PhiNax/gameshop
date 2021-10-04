@@ -4,6 +4,9 @@ const router = express.Router();
 
 const mainController = require('../controllers/mainController');
 
+const validateLogin = require('../middleware/validator');
+const validateRegister = require('../middleware/validator');
+
 // Set Routes
 // Index Route
 router.get('/', mainController.index);
