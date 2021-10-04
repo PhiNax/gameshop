@@ -11,6 +11,9 @@
 }
 
 /* START SLIDER INDEX */
+.flickity-viewport {
+  height: 125px !important;
+}
 .carousel-cell {
   width: 100%;
   height: auto;
@@ -118,6 +121,9 @@
 /* MEDIA QUERY*/
 @media screen and (min-width: 768px) {
   /* START SLIDER INDEX */
+  .flickity-viewport {
+    height: 257px !important;
+  }
   .carousel-cell {
     height: 257px;
   }
@@ -160,6 +166,9 @@
 }
 @media screen and (min-width: 1200px) {
   /* START SLIDER INDEX */
+  .flickity-viewport {
+    height: 615px !important;
+  }
   .carousel-cell {
     width: 100%;
     height: 615px;

@@ -119,23 +119,26 @@ header {
   transition: 0.5s;
   padding-top: 60px;
 }
-.sidebar a {
-  padding: 8px 8px 8px 32px;
+.sidebar__link {
+  padding: 15px 8px 5px 30px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.5rem;
   color: #818181;
   display: block;
   transition: 0.3s;
 }
-.sidebar a:hover {
+.sidebar__link:hover {
   color: #f1f1f1;
+}
+.sidebar__img {
+  padding: 13px;
 }
 .sidebar .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  top: 10px;
+  font-size: 2rem;
+  left: 10px;
+  color: #fff;
 }
 /* ENDS SIDEBAR MOBILE */
 /* MEDIA QUERY*/
