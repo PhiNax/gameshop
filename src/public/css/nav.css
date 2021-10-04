@@ -84,9 +84,37 @@ header {
 .link__span {
   padding-left: 7px;
 }
-
+/* NAVBAR MOBILE */
+.navbar__mobile {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+}
+.navM__items {
+}
+.navM__links {
+}
+/* ENDS NAVBAR MOBILE */
+/* SIDEBAR MOBILE */
+.sidebar {
+  width: 0px;
+}
+/* ENDS SIDEBAR MOBILE */
 /* MEDIA QUERY*/
+@media screen and (max-width: 550px) {
+  .navbar {
+    display: none;
+  }
+}
 @media screen and (min-width: 768px) {
+  .navbar__mobile {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1200px) {

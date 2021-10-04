@@ -51,14 +51,45 @@
     <ul class="main__nav" id="js-menu">
       <li>
         <a href="/login" class="nav__links" tabindex="11">
-          <i class="far fa-user"><span class="link__span">Login</span></i>
+          <i class="fas fa-user"><span class="link__span">Login</span></i>
         </a>
       </li>
       <li>
         <a href="/cart" class="nav__links" tabindex="12">
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-cart-arrow-down"></i>
         </a>
       </li>
     </ul>
   </nav>
+  <nav class="navbar__mobile">
+    <ul class="navM__items" id="js-menu">
+      <li>
+        <button class="open__sidebar" onclick="openNav()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </li>
+      <li>
+        <a href="/search" class="navM__links" tabindex="12">
+          <i class="fas fa-search"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/login" class="navM__links" tabindex="11">
+          <i class="fas fa-user"><span class="link__span">Login</span></i>
+        </a>
+      </li>
+      <li>
+        <a href="/cart" class="navM__links" tabindex="12">
+          <i class="fas fa-cart-arrow-down"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
 </header>
