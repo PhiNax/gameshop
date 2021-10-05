@@ -14,6 +14,10 @@
 .flickity-viewport {
   height: 125px !important;
 }
+.flickity-prev-next-button {
+  width: 25px;
+  height: 25px;
+}
 .carousel-cell {
   width: 100%;
   height: auto;
@@ -123,6 +127,10 @@
   /* START SLIDER INDEX */
   .flickity-viewport {
     height: 257px !important;
+  }
+  .flickity-prev-next-button {
+    width: 40px;
+    height: 40px;
   }
   .carousel-cell {
     height: 257px;

@@ -1,7 +1,5 @@
 // Call express module
 const express = require('express');
-// Conect to DataBase
-require('./database/mongodb');
 // Call path module
 const path = require('path');
 // Call routes
@@ -11,14 +9,19 @@ const dashboardRouter = require('./routes/dashboardRoutes');
 // Call override method
 const methodOverride = require('method-override');
 
-// Build a express app
-const app = express();
-
 // Create PORT variable with process.env
 const PORT = process.env.PORT || 3000;
 
 // Set public folder
 const staticFolder = path.resolve(__dirname, './public');
+
+// Build a express app
+const app = express();
+
+// Config listening port
+app.listen(PORT, () => {
+    console.log(`Server running on port: ${PORT}`);
+});
 
 // Set app to use public folder
 app.use(express.static(staticFolder));
@@ -48,9 +51,4 @@ app.use('/products', productsRouter);
 app.use((req, res, next) => {
     res.status(404).render('404-not-found');
     next();
-});
-
-// Config listening port
-app.listen(PORT, () => {
-    console.log(`Server running on port: ${PORT}`);
 });

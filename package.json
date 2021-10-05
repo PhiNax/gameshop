@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/PhiNax/gameshop.git#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-validator": "^6.12.2",
@@ -25,8 +26,10 @@
     "method-override": "^3.0.0",
     "mongoose": "^6.0.8",
     "multer": "^1.4.3",
+    "mysql2": "^2.3.0",
     "nodemon": "^2.0.13",
     "path": "^0.12.7",
+    "sequelize": "^6.6.5",
     "uuidv4": "^6.2.12"
   }
 }
