@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(
-    'gameshop',
+    process.env.DB_NAME,
     process.env.DB_USER,
     process.env.DB_PASS,
     {
@@ -16,3 +16,9 @@ sequelize.authenticate()
     .catch(error => {
         console.error('Unable to connect to the database:', error);
     });
+
+/*.sync()
+    .then(() => { console.log('Tables syncroned to dababase'); })
+    .catch(error => { conso.log(error); });*/
+
+

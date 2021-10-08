@@ -70,6 +70,7 @@
 .form__remember {
   display: flex;
   padding: 10px;
+  align-items: center;
 }
 .button__login {
   background-color: #0c4591;

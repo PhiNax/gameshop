@@ -84,7 +84,9 @@
 }
 .form__terms {
   display: flex;
+  align-items: center;
   padding: 10px;
+  font-size: 1rem;
 }
 .button__register {
   background-color: #0c4591;
@@ -108,7 +110,10 @@
 }
 
 /* MEDIA QUERY*/
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 367px) {
+  .form__terms {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {

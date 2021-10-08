@@ -1,28 +1,33 @@
-const { Sequelize } = require("sequelize/types");
-const connection = require('../database/connectDB');
+const { Sequelize, DataTypes, Model } = require('sequelize');
+const sequelize = require('../database/connectDB');
 
-const Model = Sequelize.Model;
 class User extends Model { }
+
 User.init({
-    // attributes
+    // attributes for User Model
+    id: {
+        type: DataTypes.UUID,
+        defaultValue: Sequelize.UUIDV4
+    },
     firstName: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     lastName: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email: {
-        type: Sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     password: {
-        type: Sequelize.PASSWORD,
+        type: DataTypes.STRING,
         allowNull: false
     }
-}, {
-    connection,
-    modelName: 'user'
-    // options
-});
+},
+    {
+        sequelize,
+        modelName: 'user'
+    }
+);

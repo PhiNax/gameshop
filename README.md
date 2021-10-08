@@ -15,4 +15,12 @@
 
     Apuntamos a todo el público amante de los videos juegos.
 
+### SKILLS
+
+    NODEJS
+    EXPRESS
+    EJS
+    MYSQL
+    SEQUELIZE
+
 ##

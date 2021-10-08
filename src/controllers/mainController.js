@@ -1,6 +1,7 @@
 // Call result validation errors
 const { validationResult } = require('express-validator');
-
+// Call Bcrypt for encrypt passwords
+const bcrypt = require('bcrypt')
 // Call FileSystem module
 const fs = require('fs');
 // Call Path module
@@ -50,11 +51,13 @@ const controller = {
             const password = req.body.password;
             const passwordC = req.body.passwordC;
 
+            let passCrypt = bcrypt.hashSync(password, 10);
+
             const newUser = new userSchema({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 email: req.body.email,
-                password: req.body.password,
+                password: passCrypt,
                 agreeTerms: req.body.terms,
                 access: '1',
             })
