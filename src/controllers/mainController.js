@@ -1,8 +1,5 @@
 // Call result validation errors
 const { validationResult } = require('express-validator');
-// Call UserSchema for MongoDB
-const userSchema = require('../models/userSchema');
-const gameSchema = require('../models/gameSchema');
 
 // Call FileSystem module
 const fs = require('fs');
@@ -42,9 +39,9 @@ const controller = {
     // Register
     register: (req, res) => {
         res.render('users/register');
-    },
+    }
     // Create New User from form
-    createUser: async (req, res) => {
+    /*createUser: async (req, res) => {
         console.log(req.body);
         let errors = validationResult(req);
 
@@ -77,7 +74,7 @@ const controller = {
         } else {
             res.render('users/register', { errors: errors.mapped(), old: req.body });
         }
-    }
+    }*/
 
 };
 

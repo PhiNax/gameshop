@@ -25,6 +25,6 @@ router.post('/login', mainController.loginUser);
 // Register Route
 router.get('/register', mainController.register);
 // Create New User
-router.post('/register', mainController.createUser)
+/*router.post('/register', mainController.createUser)*/
 
 module.exports = router;

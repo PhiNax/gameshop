@@ -1,6 +1,7 @@
 # dependencies
 /node_modules
 /things
+.env
 
 # misc
 .DS_Store

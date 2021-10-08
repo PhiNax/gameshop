@@ -1,4 +1,4 @@
-const gameSchema = require('../models/gameSchema');
+/*const gameSchema = require('../models/gameSchema');
 
 const controller = {
 
@@ -12,4 +12,4 @@ const controller = {
     }
 };
 
-module.exports = controller;
+module.exports = controller;*/

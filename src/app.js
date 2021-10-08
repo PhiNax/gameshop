@@ -1,5 +1,9 @@
 // Call express module
 const express = require('express');
+// Call dotenv module
+require('dotenv').config()
+// Connect to DB
+require('./database/connectDB');
 // Call path module
 const path = require('path');
 // Call routes
@@ -10,7 +14,7 @@ const dashboardRouter = require('./routes/dashboardRoutes');
 const methodOverride = require('method-override');
 
 // Create PORT variable with process.env
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 // Set public folder
 const staticFolder = path.resolve(__dirname, './public');
@@ -43,7 +47,7 @@ app.set('views', path.join(__dirname, './views'));
 // Main Routes
 app.use('/', mainRouter);
 // Admin Dashboard
-app.use('/dashboard', dashboardRouter);
+/*app.use('/dashboard', dashboardRouter);*/
 // Products Routes for Admins
 app.use('/products', productsRouter);
 
