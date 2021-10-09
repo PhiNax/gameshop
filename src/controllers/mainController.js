@@ -7,6 +7,8 @@ const fs = require('fs');
 // Call Path module
 const path = require('path');
 
+const { User } = require('../database/connectDB');
+
 const productsFilePath = path.join(__dirname, '../database/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -40,12 +42,12 @@ const controller = {
     // Register
     register: (req, res) => {
         res.render('users/register');
-    }
+    },
     // Create New User from form
-    /*createUser: async (req, res) => {
+    createUser: (req, res) => {
         console.log(req.body);
-        let errors = validationResult(req);
-
+        const errors = validationResult(req);
+        res.redirect('404-not-found');
         if (errors.isEmpty()) {
 
             const password = req.body.password;
@@ -53,31 +55,30 @@ const controller = {
 
             let passCrypt = bcrypt.hashSync(password, 10);
 
-            const newUser = new userSchema({
+            const newUser = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 email: req.body.email,
                 password: passCrypt,
                 agreeTerms: req.body.terms,
                 access: '1',
-            })
+            }
             console.log(newUser);
 
             if (password === passwordC) {
-                await newUser.save()
-                    .then(() => {
-                        res.render('404-not-found');
-                    })
-                    .catch((error) => { console.log(error) })
+                /*User.create(newUser)*/
+                /*.then(() => {*/
+                res.render('404-not-found');
+                /*})
+                .catch((error) => { console.log(error) })*/
             } else {
                 console.log('password dont match')
             }
 
-
         } else {
             res.render('users/register', { errors: errors.mapped(), old: req.body });
         }
-    }*/
+    }
 
 };
 

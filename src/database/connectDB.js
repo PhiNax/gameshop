@@ -17,8 +17,12 @@ sequelize.authenticate()
         console.error('Unable to connect to the database:', error);
     });
 
-/*.sync()
+const UserSchema = require('../models/usersSchema');
+const User = UserSchema(sequelize, Sequelize, Sequelize);
+
+sequelize.sync({ force: false })
     .then(() => { console.log('Tables syncroned to dababase'); })
-    .catch(error => { conso.log(error); });*/
+    .catch(error => { conso.log(error); });
 
 
+module.exports = { User }

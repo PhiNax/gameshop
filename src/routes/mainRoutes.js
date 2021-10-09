@@ -4,8 +4,7 @@ const router = express.Router();
 
 const mainController = require('../controllers/mainController');
 
-const validateLogin = require('../middleware/validator');
-const validateRegister = require('../middleware/validator');
+const validate = require('../middleware/validator');
 
 // Set Routes
 // Index Route
@@ -25,6 +24,6 @@ router.post('/login', mainController.loginUser);
 // Register Route
 router.get('/register', mainController.register);
 // Create New User
-/*router.post('/register', mainController.createUser)*/
+router.post('/register', validate.validateRegister, mainController.createUser);
 
 module.exports = router;
