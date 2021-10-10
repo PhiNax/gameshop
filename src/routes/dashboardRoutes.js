@@ -8,6 +8,9 @@ const dashboardController = require('../controllers/dashboardController');
 // Dashboard Admin
 router.get('/', dashboardController.dashboard);
 
+router.get('/create', dashboardController.create);
+
+router.post('/store', dashboardController.store);
 
 
 module.exports = router;

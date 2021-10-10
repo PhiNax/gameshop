@@ -2,7 +2,8 @@
   width: 100%;
   height: auto;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  gap: 10px;
 }
 .game__card__item {
   width: 20%;

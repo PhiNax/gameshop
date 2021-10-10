@@ -1,6 +1,6 @@
 # dependencies
 /node_modules
-/things
+/things/
 .env
 
 # misc

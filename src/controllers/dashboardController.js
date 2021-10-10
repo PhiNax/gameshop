@@ -28,7 +28,7 @@ const controller = {
         await Game.create(newGame)
             .then(() => {
                 // Render created Product by ID
-                res.redirect('admin/dashboard');
+                res.redirect('/dashboard');
             })
             .catch((error) => { console.log(error) })
     },
