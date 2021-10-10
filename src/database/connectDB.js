@@ -17,12 +17,19 @@ sequelize.authenticate()
         console.error('Unable to connect to the database:', error);
     });
 
+// User Schema    
 const UserSchema = require('../models/usersSchema');
 const User = UserSchema(sequelize, Sequelize, Sequelize);
 
+// Game Schema 
+const GameSchema = require('../models/gamesSchema');
+const Game = GameSchema(sequelize, Sequelize, Sequelize);
+
+// Synchornize only for create new tables
+/*
 sequelize.sync({ force: false })
-    .then(() => { console.log('Tables syncroned to dababase'); })
+    .then(() => { console.log('Tables Users and Games synchronized to dababase'); })
     .catch(error => { conso.log(error); });
+*/
 
-
-module.exports = { User }
+module.exports = { User, Game }

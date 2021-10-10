@@ -1,0 +1,10 @@
+<div class="navbar-products">
+  <div><input type="search" /><button>Search</button></div>
+</div>
+<div>
+  <p>Products List</p>
+</div>
+<div class="games__cards__wrapper">
+  <% games.forEach(function(games){ %> <%- include('../admin/gamesCard',
+  {games}) %> <% }); %>
+</div>

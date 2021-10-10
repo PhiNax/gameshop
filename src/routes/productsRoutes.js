@@ -4,6 +4,7 @@ const router = express.Router();
 
 const productsController = require('../controllers/productsController');
 
+/*
 const path = require("path");
 
 // Call Multer for image storage module
@@ -21,20 +22,14 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-
+upload.single('image')
+*/
 // Set Routes
 // Product Details Route
 router.get('/', productsController.list);
 
-// Product Create Route
-router.get('/create', productsController.create);
-
-// Product Catch Data from Create Form Route
-router.post('/store', upload.single('image'), productsController.store);
-
 // Product Details Route
 router.get('/:id', productsController.detail);
-
 
 
 module.exports = router;

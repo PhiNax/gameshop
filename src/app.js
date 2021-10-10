@@ -47,7 +47,7 @@ app.set('views', path.join(__dirname, './views'));
 // Main Routes
 app.use('/', mainRouter);
 // Admin Dashboard
-/*app.use('/dashboard', dashboardRouter);*/
+app.use('/dashboard', dashboardRouter);
 // Products Routes for Admins
 app.use('/products', productsRouter);
 

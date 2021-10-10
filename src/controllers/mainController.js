@@ -44,11 +44,31 @@ const controller = {
         res.render('users/register');
     },
     // Create New User from form
-    createUser: (req, res) => {
+    createUser: async (req, res) => {
         console.log(req.body);
-        const errors = validationResult(req);
-        res.redirect('404-not-found');
-        if (errors.isEmpty()) {
+        let password = req.body.password;
+        let passCrypt = bcrypt.hashSync(password, 10);
+
+        let newUser = {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: passCrypt,
+            agreeTerms: req.body.terms,
+            access: '1',
+        }
+        console.log(newUser);
+
+        await User.create(newUser)
+            .then(() => {
+                res.redirect('404-not-found');
+            })
+            .catch((error) => { console.log(error) })
+
+        /*const errors = validationResult(req);*/
+
+
+        /*if (errors.isEmpty()) {
 
             const password = req.body.password;
             const passwordC = req.body.passwordC;
@@ -66,18 +86,18 @@ const controller = {
             console.log(newUser);
 
             if (password === passwordC) {
-                /*User.create(newUser)*/
-                /*.then(() => {*/
+                User.create(newUser)
+                .then(() => {
                 res.render('404-not-found');
-                /*})
-                .catch((error) => { console.log(error) })*/
+                })
+                .catch((error) => { console.log(error) })
             } else {
-                console.log('password dont match')
+                console.log('password dont match');
             }
 
         } else {
             res.render('users/register', { errors: errors.mapped(), old: req.body });
-        }
+        }*/
     }
 
 };

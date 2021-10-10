@@ -1,0 +1,34 @@
+.games__cards__wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.game__card__item {
+  width: 20%;
+  background-color: rgb(172, 90, 90);
+  padding: 15px;
+}
+.game__card__img {
+}
+.game__card__img img {
+  width: 100%;
+}
+.game__card__content {
+}
+.game__card__titles {
+}
+.game__card__description {
+}
+.game__card__platform {
+}
+.game__card__released {
+}
+.game__card__rating {
+}
+.game__card__metacritics {
+}
+.game__card__esrb {
+}
+.game__card__price {
+}
