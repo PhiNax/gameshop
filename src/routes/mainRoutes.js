@@ -11,7 +11,7 @@ const validate = require('../middleware/validator');
 router.get('/', mainController.index);
 
 // Product Details Route
-router.get('/productDetails', mainController.detail);
+//router.get('/productDetails', mainController.detail);
 
 // Cart Details Route
 router.get('/cart', mainController.cart);

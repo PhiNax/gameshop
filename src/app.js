@@ -8,7 +8,7 @@ require('./database/connectDB');
 const path = require('path');
 // Call routes
 const mainRouter = require('./routes/mainRoutes');
-const productsRouter = require('./routes/productsRoutes');
+const gamesRouter = require('./routes/gamesRoutes');
 const dashboardRouter = require('./routes/dashboardRoutes');
 // Call override method
 const methodOverride = require('method-override');
@@ -49,7 +49,7 @@ app.use('/', mainRouter);
 // Admin Dashboard
 app.use('/dashboard', dashboardRouter);
 // Products Routes for Admins
-app.use('/products', productsRouter);
+app.use('/games', gamesRouter);
 
 // 404 Routes
 app.use((req, res, next) => {

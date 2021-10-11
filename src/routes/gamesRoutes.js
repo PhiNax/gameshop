@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const productsController = require('../controllers/productsController');
+const gamesController = require('../controllers/gamesController');
 
 /*
 const path = require("path");
@@ -26,10 +26,10 @@ upload.single('image')
 */
 // Set Routes
 // Product Details Route
-router.get('/', productsController.list);
+router.get('/platform/:id', gamesController.platform);
 
 // Product Details Route
-router.get('/:id', productsController.detail);
+//router.get('/:id', gamesController.detail);
 
 
 module.exports = router;

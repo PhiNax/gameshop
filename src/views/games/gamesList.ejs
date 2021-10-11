@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('partials/head') -%>
+    <%- include('../partials/head') -%>
     <link rel="stylesheet" href="/css/index.css" type="text/css" />
   </head>
   <body class="body__index">
-    <%- include('partials/header') -%>
+    <%- include('../partials/header') -%>
 
     <!-- START Slider Flickity -->
     <div class="main-carousel" data-flickity='{ "contain": true }'>
@@ -24,23 +24,14 @@
     <main class="main__index">
       <section class="bestseller__wrapper">
         <div class="bestseller__title">
-          <span class="title">Mas vendidos</span>
+          <span class="title"><%= games[0].platform %> Games</span>
         </div>
 
+        <!-- prettier-ignore -->
         <div class="cards__container">
-          <% products.forEach(function(products){ %> <%-
-          include('partials/mainCard', {products}) %> <% }); %>
-        </div>
-      </section>
-
-      <section class="bestseller__wrapper">
-        <div class="bestseller__title">
-          <span class="title">Mas Valorados</span>
-        </div>
-
-        <div class="cards__container">
-          <% products.forEach(function(products){ %> <%-
-          include('partials/mainCard', {products}) %> <% }); %>
+          <% games.forEach(function(games){ %>
+          <%- include('gamesCard', {games}) %>
+          <% }); %>
         </div>
       </section>
       <!-- ENDS MAIN Content -->
@@ -109,6 +100,6 @@
       </section>
       <!-- ENDS Services Content -->
     </main>
-    <%- include('partials/footer') -%>
+    <%- include('../partials/footer') -%>
   </body>
 </html>
