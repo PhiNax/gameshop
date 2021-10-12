@@ -1,10 +1,9 @@
-<div class="navbar-products">
-  <div><input type="search" /><button>Search</button></div>
-</div>
 <div>
-  <p>Products List</p>
+  <span class="title"><%= games[0].platform %> Games</span>
 </div>
+<!-- prettier-ignore -->
 <div class="games__cards__wrapper">
-  <% games.forEach(function(games){ %> <%- include('../admin/gamesCard',
-  {games}) %> <% }); %>
+  <% games.forEach(function(games){ %>
+  <%- include('../admin/gamesCard', {games}) %>
+  <% }); %>
 </div>

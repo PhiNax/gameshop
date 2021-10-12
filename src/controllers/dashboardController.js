@@ -7,6 +7,17 @@ const controller = {
         const games = await Game.findAll();
         res.render('admin/dashboard', { games });
     },
+    // List Games for platform
+    platform: async (req, res) => {
+        const platformName = req.params.id
+
+        const games = await Game.findAll({
+            where: {
+                platform_slug: platformName,
+            }
+        });
+        res.render('admin/dashboard', { games });
+    },
     // Create - Form to create
     create: (req, res) => {
         res.render('admin/gamesCreate');
@@ -18,6 +29,7 @@ const controller = {
             name: req.body.name,
             description: req.body.description,
             platform: req.body.platform,
+            platform_slug: req.body.platform_slug,
             released: req.body.released,
             coverImage: req.body.coverImage,
             rating: req.body.rating,

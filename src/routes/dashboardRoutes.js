@@ -12,5 +12,6 @@ router.get('/create', dashboardController.create);
 
 router.post('/store', dashboardController.store);
 
+router.get('/platform/:id', dashboardController.platform);
 
 module.exports = router;

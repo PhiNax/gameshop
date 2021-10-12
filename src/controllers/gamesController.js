@@ -11,7 +11,6 @@ const controller = {
                 platform_slug: platformName,
             }
         });
-        console.log(games);
         res.render('games/gamesList', { games });
     },
     // Detail - Detail from one product

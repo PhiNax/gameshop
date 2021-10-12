@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             allowNull: false
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         platform: {
@@ -38,6 +38,10 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             allowNull: false
         },
         price: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        platform_slug: {
             type: DataTypes.STRING,
             allowNull: false
         }
