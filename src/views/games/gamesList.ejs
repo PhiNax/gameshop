@@ -27,11 +27,10 @@
           <span class="title"><%= games[0].platform %> Games</span>
         </div>
 
-        <!-- prettier-ignore -->
+        <% // prettier-ignore %>
         <div class="cards__container">
-          <% games.forEach(function(games){ %>
-          <%- include('gamesCard', {games}) %>
-          <% }); %>
+          <% games.forEach(function(games){ %> <%- include('gamesCard', {games})
+          %> <% }); %>
         </div>
       </section>
       <!-- ENDS MAIN Content -->
