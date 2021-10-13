@@ -10,18 +10,16 @@ const path = require('path');
 const mainRouter = require('./routes/mainRoutes');
 const gamesRouter = require('./routes/gamesRoutes');
 const dashboardRouter = require('./routes/dashboardRoutes');
+
 // Call override method
 const methodOverride = require('method-override');
 
 // Create PORT variable with process.env
 const PORT = process.env.PORT;
-
 // Set public folder
 const staticFolder = path.resolve(__dirname, './public');
-
 // Build a express app
 const app = express();
-
 // Config listening port
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`);
@@ -29,13 +27,10 @@ app.listen(PORT, () => {
 
 // Set app to use public folder
 app.use(express.static(staticFolder));
-
 // Set app to use encoded
 app.use(express.urlencoded({ extended: false }));
-
 // Set app to use json pharse
 app.use(express.json());
-
 // Set app to override method on form
 app.use(methodOverride('_method')); // method="POST" on form to use PUT y DELETE
 

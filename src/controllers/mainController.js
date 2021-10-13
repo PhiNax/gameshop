@@ -2,21 +2,47 @@
 const { validationResult } = require('express-validator');
 // Call Bcrypt for encrypt passwords
 const bcrypt = require('bcrypt')
-// Call FileSystem module
-const fs = require('fs');
-// Call Path module
-const path = require('path');
 
 const { User } = require('../database/connectDB');
-
-const productsFilePath = path.join(__dirname, '../database/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const { Game } = require('../database/connectDB');
 
 // Create Main Controller
 const controller = {
     // Index
-    index: (req, res) => {
-        res.render('index', { products });
+    index: async (req, res) => {
+
+        const gamesPc = await Game.findAll({
+            where: {
+                platform_slug: 'pc',
+            }
+        });
+        const gamesPs4 = await Game.findAll({
+            where: {
+                platform_slug: 'ps4',
+            }
+        });
+        const gamesPs5 = await Game.findAll({
+            where: {
+                platform_slug: 'ps5',
+            }
+        });
+        const gamesXbox = await Game.findAll({
+            where: {
+                platform_slug: 'xbox',
+            }
+        });
+        const gamesWiiu = await Game.findAll({
+            where: {
+                platform_slug: 'wiiu',
+            }
+        });
+        const gamesSwitch = await Game.findAll({
+            where: {
+                platform_slug: 'switch',
+            }
+        });
+
+        res.render('index', { gamesPc, gamesPs4, gamesPs5, gamesXbox, gamesWiiu, gamesSwitch });
     },
 
     // Detail from one product
@@ -27,7 +53,6 @@ const controller = {
     // Cart
     cart: (req, res) => {
         res.render('users/cart');
-
     },
 
     // Login

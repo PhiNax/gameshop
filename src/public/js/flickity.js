@@ -1,11 +1,11 @@
 /*
-const elem = document.querySelector('.main-carousel');
+const elem = document.getElementById('#main-carousel');
 const elem1 = document.querySelector('.carousel-cell');
 console.log('funciona');
 console.log(elem);
 console.log(elem1);
 
-const flkty = new Flickity(elem, {
+const flkty = new Flickity(`.carousel`, {
     // options
     cellAlign: 'left',
     contain: true
