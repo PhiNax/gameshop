@@ -16,11 +16,11 @@ const controller = {
                 platform_slug: platformName,
             }
         });
-        res.render('admin/dashboard', { games });
+        res.render('admin/dashboardByPlatform', { games });
     },
     // Create - Form to create
     create: (req, res) => {
-        res.render('admin/gamesCreate');
+        res.render('admin/dashboardCreate');
     },
     // Create Method to store in DataBase
     store: async (req, res) => {

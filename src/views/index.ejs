@@ -16,7 +16,7 @@
           <span class="title"><%= gamesPc[0].platform %> Games</span>
         </div>
 
-        <div class="cards__container">
+        <div class="cards__container dragscroll">
           <% gamesPc.forEach(function(games){ %> <%-
           include('partials/mainCard', {games}) %> <% }); %>
         </div>
@@ -38,7 +38,7 @@
           <span class="title"><%= gamesPs5[0].platform %> Games</span>
         </div>
 
-        <div class="cards__container">
+        <div class="cards__container dragscroll">
           <% gamesPs5.forEach(function(games){ %> <%-
           include('partials/mainCard', {games}) %> <% }); %>
         </div>

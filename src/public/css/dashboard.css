@@ -1,19 +1,23 @@
 .body__dash {
   width: 100%;
   height: auto;
+  background-color: #e6e8ea;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .main__dash {
   display: flex;
   flex-direction: row;
 }
 .dash__menu {
-  width: 15%;
-  height: auto;
-  background-color: #002650;
+  background-color: rgb(27, 35, 48);
   padding: 15px;
-  color: #bec1c5;
+  color: #d5d5d5;
   display: flex;
   flex-direction: column;
+  box-shadow: 1px -5px 5px 0px rgb(0, 0, 0);
+  position: relative;
+  height: auto;
+  width: 250px;
 }
 .dash__logo {
   align-self: center;
@@ -23,10 +27,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  background-color: #46556b;
-  border-radius: 16px;
-  margin-top: 15px;
+  margin: 15px 0;
+  border-bottom: 1px solid #999fa6;
 }
 .control__img {
   width: 80px;
@@ -46,7 +48,10 @@
 }
 .dash__games__menu {
   width: 100%;
-  font-size: 1.5rem;
+  margin: 20px 0;
+}
+.dash__menu__title {
+  font-size: 1.2rem;
 }
 .dash__games__list {
   display: flex;
@@ -75,4 +80,11 @@
 .dash__content {
   width: 100%;
   padding: 0.7rem;
+}
+
+/* START GAME FORM CREATE */
+.dashboard__form_create {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }

@@ -8,12 +8,14 @@
 .game__card__item {
   width: 20%;
   background-color: rgb(172, 90, 90);
-  padding: 15px;
+  border-radius: 10px;
 }
 .game__card__img {
+  width: 100%;
 }
 .game__card__img img {
   width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 .game__card__content {
 }

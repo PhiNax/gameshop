@@ -1,47 +1,45 @@
-<div>
-  <form action="/dashboard/store" method="POST">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" name="name" />
-    </div>
-    <div>
-      <label for="description">Description:</label>
-      <input type="text" name="description" />
-    </div>
-    <div>
-      <label for="platform">Platform:</label>
-      <input type="text" name="platform" />
-    </div>
-    <div>
-      <label for="platform_slug">Platform Slug:</label>
-      <input type="text" name="platform_slug" />
-    </div>
-    <div>
-      <label for="released">Released:</label>
-      <input type="date" name="released" />
-    </div>
-    <div>
-      <label for="coverImage">Cover Image:</label>
-      <input type="text" name="coverImage" />
-    </div>
-    <div>
-      <label for="rating">Rating:</label>
-      <div><input type="number" name="rating" min="1" max="5" /></div>
-    </div>
-    <div>
-      <label for="metacritic">Metacritic:</label>
-      <input type="number" name="metacritic" min="1" max="100" />
-    </div>
-    <div>
-      <label for="esrbRating">Esrb Rating:</label>
-      <input type="text" name="esrbRating" />
-    </div>
-    <div>
-      <label for="price">Price:</label>
-      <input type="text" name="price" />
-    </div>
+<form class="dashboard__form_create" action="/dashboard/store" method="POST">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" name="name" />
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <input type="text" name="description" />
+  </div>
+  <div>
+    <label for="platform">Platform:</label>
+    <input type="text" name="platform" />
+  </div>
+  <div>
+    <label for="platform_slug">Platform Slug:</label>
+    <input type="text" name="platform_slug" />
+  </div>
+  <div>
+    <label for="released">Released:</label>
+    <input type="date" name="released" />
+  </div>
+  <div>
+    <label for="coverImage">Cover Image:</label>
+    <input type="text" name="coverImage" />
+  </div>
+  <div>
+    <label for="rating">Rating:</label>
+    <div><input type="number" name="rating" min="1" max="5" /></div>
+  </div>
+  <div>
+    <label for="metacritic">Metacritic:</label>
+    <input type="number" name="metacritic" min="1" max="100" />
+  </div>
+  <div>
+    <label for="esrbRating">Esrb Rating:</label>
+    <input type="text" name="esrbRating" />
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input type="text" name="price" />
+  </div>
 
-    <div><input type="submit" value="Create" /></div>
-    <div><input type="reset" value="Reset" /></div>
-  </form>
-</div>
+  <div><input type="submit" value="Create" /></div>
+  <div><input type="reset" value="Reset" /></div>
+</form>
