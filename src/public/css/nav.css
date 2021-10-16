@@ -52,13 +52,26 @@ header {
 }
 .search__input {
   padding: 0.3rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.2;
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
   border-radius: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ced4da;
+}
+.search__button {
+  background: none;
+  border: none;
+  width: 30px;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.search__button:hover {
+  color: var(--blueC);
 }
 .main__nav {
   display: flex;
@@ -73,6 +86,10 @@ header {
   font-weight: 400;
   display: block;
   position: relative;
+  transition: all 0.3s ease;
+}
+.nav__links:hover {
+  color: var(--blueC);
 }
 .main__nav li {
   text-align: center;

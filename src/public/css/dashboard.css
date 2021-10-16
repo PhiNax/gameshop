@@ -17,7 +17,7 @@
   box-shadow: 1px -5px 5px 0px rgb(0, 0, 0);
   position: relative;
   height: auto;
-  width: 250px;
+  flex: 0 0 15%;
 }
 .dash__logo {
   align-self: center;
@@ -83,8 +83,74 @@
 }
 
 /* START GAME FORM CREATE */
-.dashboard__form_create {
+.dash__content__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  padding: 1rem;
+  margin: auto;
+  height: auto;
+  border-top: 2px solid #09346c;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%),
+    0 0.9375rem 1.40625rem rgb(90 97 105 / 10%),
+    0 0.25rem 0.53125rem rgb(90 97 105 / 12%),
+    0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+}
+.dash__form__create {
   display: flex;
   flex-direction: column;
   align-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+.dash__form__edit {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  padding: 1rem;
+}
+.dash__form__title {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+.dash__form__create input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  flex: 1 auto;
+}
+.dash__form__create label {
+  display: block;
+  padding: 0.5rem;
+  font-weight: bold;
+  flex: 0 0 15%;
+}
+.dash_div {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.button__create {
+  background-color: #0c4591;
+  border-color: transparent;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  color: #fff;
+  width: 100%;
+  padding: 15px;
+  box-shadow: 0 2px 6px #1f4d8a;
+  margin: 20px 15px;
 }

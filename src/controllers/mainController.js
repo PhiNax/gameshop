@@ -55,15 +55,27 @@ const controller = {
         res.render('users/cart');
     },
 
-    // Login
+    // Login User
     login: (req, res) => {
         res.render('users/login');
     },
     // Login User
     loginUser: (req, res) => {
-
+        /*    const email = req.body.email;
+            const password = req.body.password;
+            let passHash = await bcrypt.hash(password, 10);
+    
+            if (email && password) {
+                await User.query('SELECT * FROM users WHERE email = ?', [email])
+            }
+            res.render('/'), { user: User.firstName }*/
     },
-
+    // Logout User
+    logoutUser: (req, res) => {
+        req.session.destroy(() => {
+            res.redirect('/');
+        });
+    },
     // Register
     register: (req, res) => {
         res.render('users/register');
@@ -94,12 +106,12 @@ const controller = {
 
 
         /*if (errors.isEmpty()) {
-
+ 
             const password = req.body.password;
             const passwordC = req.body.passwordC;
-
+ 
             let passCrypt = bcrypt.hashSync(password, 10);
-
+ 
             const newUser = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -109,7 +121,7 @@ const controller = {
                 access: '1',
             }
             console.log(newUser);
-
+ 
             if (password === passwordC) {
                 User.create(newUser)
                 .then(() => {
@@ -119,7 +131,7 @@ const controller = {
             } else {
                 console.log('password dont match');
             }
-
+ 
         } else {
             res.render('users/register', { errors: errors.mapped(), old: req.body });
         }*/

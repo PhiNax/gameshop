@@ -20,7 +20,8 @@ router.get('/cart', mainController.cart);
 router.get('/login', mainController.login);
 // Login User
 router.post('/login', mainController.loginUser);
-
+// Logout User
+router.get('/logout', mainController.logoutUser);
 // Register Route
 router.get('/register', mainController.register);
 // Create New User

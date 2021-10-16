@@ -6,6 +6,8 @@ require('dotenv').config()
 require('./database/connectDB');
 // Call path module
 const path = require('path');
+// Call Session module
+const session = require('express-session')
 // Call routes
 const mainRouter = require('./routes/mainRoutes');
 const gamesRouter = require('./routes/gamesRoutes');
@@ -33,7 +35,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 // Set app to override method on form
 app.use(methodOverride('_method')); // method="POST" on form to use PUT y DELETE
-
+// Set app to use session storage
+app.use(session({
+    secret: 'cat on the roof',
+    resave: false,
+    saveUninitialized: true,
+}));
 // Set View Engine EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
@@ -41,10 +48,11 @@ app.set('views', path.join(__dirname, './views'));
 // Use Routes
 // Main Routes
 app.use('/', mainRouter);
-// Admin Dashboard
-app.use('/dashboard', dashboardRouter);
-// Products Routes for Admins
+// Products Routes
 app.use('/games', gamesRouter);
+// Admin Dashboard Routes
+app.use('/dashboard', /* userAuth */ dashboardRouter);
+
 
 // 404 Routes
 app.use((req, res, next) => {

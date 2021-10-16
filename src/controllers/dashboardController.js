@@ -40,21 +40,41 @@ const controller = {
         await Game.create(newGame)
             .then(() => {
                 // Render created Product by ID
-                res.redirect('/dashboard');
+                res.redirect('admin/dashboard');
             })
             .catch((error) => { console.log(error) })
     },
-    // Update - Form to edit
-    edit: (req, res) => {
-        // Do the magic
+    // Get Form to edit by ID
+    edit: async (req, res) => {
+        const id = req.params.id;
+
+        const games = await Game.findAll({
+            where: {
+                id: id,
+            }
+        });
+        res.render('admin/dashboardEdit', { games });
     },
     // Update - Method to update
-    update: (req, res) => {
-        // Do the magic
+    update: async (req, res) => {
+
+        await Game.save()
+            .then(() => {
+                // TODO: Render created Product by ID
+                res.redirect('admin/dashboard');
+            })
+            .catch((error) => { console.log(error) })
     },
     // Delete - Delete one product from DB
-    destroy: (req, res) => {
-        // Do the magic
+    destroy: async (req, res) => {
+        await Game.destroy({
+            where: { id: id }
+        })
+            .then(() => {
+                // Render created Product by ID
+                res.redirect('admin/dashboard');
+            })
+            .catch((error) => { console.log(error) })
     }
 };
 

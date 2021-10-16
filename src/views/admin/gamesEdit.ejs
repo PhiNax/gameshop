@@ -1,51 +1,51 @@
 <div class="dash__content__form">
   <form class="dash__form__create" action="/dashboard/update" method="POST">
     <div class="dash__form__title">
-      <span>Create a new Game</span>
+      <span>Edit Game</span>
     </div>
     <div class="dash_div">
       <label for="name">Name:</label>
-      <input type="text" name="name" />
+      <input type="text" name="name" value="<%= games[0].name %>"/>
     </div>
     <div class="dash_div">
       <label for="description">Description:</label>
-      <input type="text" name="description" />
+      <input type="text" name="description" value="<%= games[0].description %>"/>
     </div>
     <div class="dash_div">
       <label for="platform">Platform:</label>
-      <input type="text" name="platform" />
+      <input type="text" name="platform" value="<%= games[0].platform %>"/>
     </div>
     <div class="dash_div">
       <label for="platform_slug">Platform Slug:</label>
-      <input type="text" name="platform_slug" />
+      <input type="text" name="platform_slug" value="<%= games[0].platform_slug %>"/>
     </div>
     <div class="dash_div">
       <label for="released">Released:</label>
-      <input type="text" name="released" placeholder="yyy/mm/dd" />
+      <input type="text" name="released" value="<%= games[0].released %>" />
     </div>
     <div class="dash_div">
       <label for="coverImage">Cover Image:</label>
-      <input type="text" name="coverImage" />
+      <input type="text" name="coverImage" value="<%= games[0].coverImage %>" />
     </div>
     <div class="dash_div">
       <label for="rating">Rating:</label>
-      <input type="number" name="rating" min="1" max="5" />
+      <input type="number" name="rating" min="1" max="5" value="<%= games[0].rating %>" />
     </div>
     <div class="dash_div">
       <label for="metacritic">Metacritic:</label>
-      <input type="number" name="metacritic" min="1" max="100" />
+      <input type="number" name="metacritic" min="1" max="100" value="<%= games[0].metacritic %>" />
     </div>
     <div class="dash_div">
       <label for="esrbRating">Esrb Rating:</label>
-      <input type="text" name="esrbRating" />
+      <input type="text" name="esrbRating" value="<%= games[0].esrbRating %>" />
     </div>
     <div class="dash_div">
       <label for="price">Price:</label>
-      <input type="text" name="price" />
+      <input type="text" name="price" value="<%= games[0].price %>"/>
     </div>
 
     <div class="dash_div">
-      <button class="button__create" type="submit" value="Create" />Create
+      <button class="button__create" type="submit" value="Edit" />Edit
       <button class="button__create" type="reset" value="Reset" />Reset
     </div>
   </form>

@@ -1,9 +1,11 @@
-<div>
-  <span class="title">All Games</span>
-</div>
-<!-- prettier-ignore -->
-<div class="games__cards__wrapper">
+<section class="dash__content">
+  <div>
+    <span class="title">All Games</span>
+  </div>
+  <!-- prettier-ignore -->
+  <div class="games__cards__wrapper">
   <% games.forEach(function(games){ %>
   <%- include('../admin/gamesCard', {games}) %>
   <% }); %>
 </div>
+</section>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <%- include('../partials/headDashboard') -%>
-  </head>
+  <!-- Head Html -->
+  <%- include('../partials/headDashboard') -%>
 
   <body class="body__dash">
+    <!-- Dashboad Menu -->
     <main class="main__dash">
       <section class="dash__menu">
         <img class="dash__logo" src="/img/gameshop.png" />
@@ -31,9 +31,8 @@
           </ul>
         </div>
       </section>
-      <section class="dash__content">
-        <%- include('../admin/gamesList') -%>
-      </section>
+      <!-- Content -->
+      <%- include('../admin/gamesList') -%>
     </main>
   </body>
 </html>
