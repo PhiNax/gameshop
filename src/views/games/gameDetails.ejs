@@ -1,53 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- START Head Content -->
-  <%- include('../partials/head') -%>
+<!-- START Head Content -->
+<%- include('../partials/head') -%>
+
   <body>
     <!-- START Header Content -->
     <%- include('../partials/header') -%>
-    <main>
-      <!-- START MAIN Content -->
-      <div class="detail__background">
-        <img src="<%= games[0].backgroundImage %>" alt="" />
-      </div>
-      <div class="detail__content">
-        <div class="detail__images">
-          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__img" />
-          <div class="detail__images__carousel">
-          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
-          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
-          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
-          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+      <main>
+        <!-- START MAIN Content -->
+        <div class="detail__background">
+          <img src="<%= games[0].backgroundImage %>" alt="" />
+        </div>
+        <div class="detail__content">
+          <div class="detail__images">
+            <img src="<%= games[0].backgroundImage %>" alt="" class="detail__img" />
+            <div class="detail__images__carousel">
+              <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+              <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+              <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+              <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+            </div>
           </div>
-        </div>
-        <div class="detail__details">
-          <div><%= games[0].platform %> Games</div>
-          <div><%= games[0].name %></div>
-          <div>Released: <%= games[0].released %></div>
-          <div><%= games[0].description %></div>
-        </div>
-        <div class="detail__sale">
-          <div class="detail__icons">
-          <div><%= games[0].metacritic %></div>
-          <div><%= games[0].esrbRating %></div>
-          <div><i class="fas fa-globe"></i></div>
-          <div><i class="fas fa-share-alt"></i></div>
-          <div><i class="far fa-heart"></i></div>
-        </div>
-        <div>
-          <div>Users Rating:</div>
-          <%= games[0].rating %>
-        </div>
-        <div>
-          <div>$<%= games[0].price %></div>
-        </div>
-        <div>
-          <button type="submit">Add to Cart</button>
-        </div>
-        <div><i class="fas fa-lock"></i>Your transaction is secure</div>
-      </div>
-    </main>
-    <!-- START Footer Content -->
-    <%- include('../partials/footer') -%>
+          <div class="detail__details">
+            <div class="detail__platform">
+              <%= games[0].platform %> Games
+            </div>
+            <div class="detail__title">
+              <%= games[0].name %>
+            </div>
+            <div>Released: <%= games[0].released %>
+            </div>
+            <div>
+              <%= games[0].description %>
+            </div>
+          </div>
+          <div class="detail__sale">
+            <div class="detail__icons">
+              <div class="detail__metacritic">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.3 63.25" width="20" height="20">
+                  <path
+                    d="M0 37.04l6.45-6.82 3.9 3.58q-1.05-7.84 3.73-12.89a13 13 0 015.53-3.63 12 12 0 016.46-.11 17.47 17.47 0 01.37-7.11 13.28 13.28 0 013.19-5.59 14 14 0 016.2-4.05 10.76 10.76 0 016.74.26q2.55.91 6.61 4.66L67.35 22.1l-7 7.45-16.27-15c-2.82-2.6-4.87-4-6.18-4.27a4.9 4.9 0 00-4.55 1.65 6.86 6.86 0 00-1.8 3.82 7 7 0 001 4.57 27.44 27.44 0 005.29 6l13.51 12.61-7 7.41-15.52-14.37c-2.77-2.55-4.67-4.06-5.72-4.54a4.78 4.78 0 00-2.95-.43 5.48 5.48 0 00-2.72 1.71 7.37 7.37 0 00-2 4 6.86 6.86 0 00.91 4.4 27.34 27.34 0 005.3 6l13.7 12.74-7 7.4z"
+                    fill="#fff"></path>
+                </svg>
+                <span class="metacritic__score">
+                  <%= games[0].metacritic %>
+                </span>
+
+              </div>
+              <div>
+                <%= games[0].esrbRating %>
+              </div>
+              <div><i class="fas fa-globe"></i></div>
+              <div class="share__icon">
+                <i class="fas fa-share-alt"></i>
+                <span class="tooltiptext">Share</span>
+              </div>
+              <div class="favourite__icon">
+                <i class="far fa-heart"></i>
+                <span class="tooltiptext">Add to favorites</span>
+              </div>
+            </div>
+            <div class="detail__rating">
+              <div>Users Rating:</div>
+              <div class="stars__rating" style="--rating: <%= games[0].rating %>;"></div>
+            </div>
+            <div class="detail__price">
+              <div>$<%= games[0].price %>
+              </div>
+            </div>
+            <div class="detail__button">
+              <button class="button__addcart" type="submit">Add to Cart</button>
+            </div>
+            <div class="secure__icons"><i class="fas fa-lock"></i> Your transaction is secure</div>
+            <div><a class="secure__details" href="#">See our secure transaction details</a></div>
+          </div>
+      </main>
+      <!-- START Footer Content -->
+      <%- include('../partials/footer') -%>
   </body>
+
 </html>
