@@ -107,13 +107,6 @@
   width: 100%;
   padding: 1rem;
 }
-.dash__form__edit {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  width: 100%;
-  padding: 1rem;
-}
 .dash__form__title {
   font-size: 1.6rem;
   margin-bottom: 15px;

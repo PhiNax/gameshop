@@ -173,6 +173,55 @@
     padding-bottom: 45px;
   }
   /* END MAIN INDEX */
+  /* START GAME DETAILS */
+  .detail__background {
+    width: 100%;
+  }
+  .detail__background img {
+    width: 100%;
+    margin-top: -75px;
+  }
+  .detail__content {
+    width: 90%;
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    padding: 2rem;
+    margin: auto;
+    height: auto;
+    top: -290px;
+  }
+  .detail__images {
+    flex: 0 0 40%;
+  }
+  .detail__img {
+    width: 100%;
+  }
+  .detail__images__carousel {
+    display: flex;
+    gap: 3px;
+    margin-top: 15px;
+  }
+  .detail__miniImages {
+    width: 30%;
+  }
+  .detail__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 0 0 40%;
+  }
+  .detail__sale {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 0 0 20%;
+  }
+  .detail__icons {
+    display: flex;
+  }
+
+  /* END GAME DETAILS */
 }
 @media screen and (min-width: 1200px) {
   /* START SLIDER INDEX */

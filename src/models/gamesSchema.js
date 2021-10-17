@@ -23,6 +23,10 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         },
         coverImage: {
             type: DataTypes.STRING,
+            allowNull: true
+        },
+        backgroundImage: {
+            type: DataTypes.STRING,
             allowNull: false
         },
         rating: {

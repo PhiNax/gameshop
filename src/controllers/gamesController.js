@@ -14,9 +14,15 @@ const controller = {
         res.render('games/gamesList', { games });
     },
     // Detail - Detail from one product
-    detail: (req, res) => {
-        const detailProductById = products.find(element => element.id === req.params.id);
-        res.render('games/productsDetail', { games: detailProductById });
+    detail: async (req, res) => {
+        const gameId = req.params.id
+
+        const games = await Game.findAll({
+            where: {
+                id: gameId,
+            }
+        });
+        res.render('games/gameDetails', { games });
     }
 };
 

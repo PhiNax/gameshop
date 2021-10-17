@@ -29,7 +29,7 @@ upload.single('image')
 router.get('/platform/:id', gamesController.platform);
 
 // Product Details Route
-//router.get('/:id', gamesController.detail);
+router.get('/:id', gamesController.detail);
 
 
 module.exports = router;

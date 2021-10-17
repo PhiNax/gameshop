@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <%- include('../partials/head') -%>
-  </head>
-
+  <!-- START Head Content -->
+  <%- include('../partials/head') -%>
   <body>
+    <!-- START Header Content -->
     <%- include('../partials/header') -%>
     <main>
-      <p>PRODUCTS DETAILS</p>
+      <!-- START MAIN Content -->
+      <div class="detail__background">
+        <img src="<%= games[0].backgroundImage %>" alt="" />
+      </div>
+      <div class="detail__content">
+        <div class="detail__images">
+          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__img" />
+          <div class="detail__images__carousel">
+          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+          <img src="<%= games[0].backgroundImage %>" alt="" class="detail__miniImages">
+          </div>
+        </div>
+        <div class="detail__details">
+          <div><%= games[0].platform %> Games</div>
+          <div><%= games[0].name %></div>
+          <div>Released: <%= games[0].released %></div>
+          <div><%= games[0].description %></div>
+        </div>
+        <div class="detail__sale">
+          <div class="detail__icons">
+          <div><%= games[0].metacritic %></div>
+          <div><%= games[0].esrbRating %></div>
+          <div><i class="fas fa-globe"></i></div>
+          <div><i class="fas fa-share-alt"></i></div>
+          <div><i class="far fa-heart"></i></div>
+        </div>
+        <div>
+          <div>Users Rating:</div>
+          <%= games[0].rating %>
+        </div>
+        <div>
+          <div>$<%= games[0].price %></div>
+        </div>
+        <div>
+          <button type="submit">Add to Cart</button>
+        </div>
+        <div><i class="fas fa-lock"></i>Your transaction is secure</div>
+      </div>
     </main>
+    <!-- START Footer Content -->
     <%- include('../partials/footer') -%>
   </body>
 </html>
