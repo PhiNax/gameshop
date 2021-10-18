@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <%- include('../partials/head') -%>
-  </head>
+<html lang="en">
+<!-- START Head Content -->
+<%- include('../partials/head') -%>
+
   <body class="body__index">
     <!-- START Header Content -->
     <%- include('../partials/header') -%>
-    <!-- START Slider Flickity -->
-    <%- include('../partials/slider') -%>
-    <!-- START MAIN Content -->
-    <main class="main__index">
-      <section class="bestseller__wrapper">
-        <div class="bestseller__title">
-          <span class="title"><%= games[0].platform %> Games</span>
-        </div>
+      <!-- START Slider Flickity -->
+      <%- include('../partials/slider') -%>
+        <!-- START MAIN Content -->
+        <main class="main__index">
+          <section class="gameList__wrapper">
+            <div class="gameList__title">
+              <span class="gameList__span__title">
+                <%= games[0].platform %> Games
+              </span>
+            </div>
 
-        <!-- prettier-ignore -->
-        <div class="cards__container">
-          <% games.forEach(function(games){ %>
-          <%- include('gamesCard', {games}) %>
-          <% }); %>
-        </div>
-      </section>
-      <!-- ENDS MAIN Content -->
-      <!-- START Services Content -->
-      <%- include('../partials/services-section') -%>
-    </main>
-    <!-- START Footer Content -->
-    <%- include('../partials/footer') -%>
+            <div class="cards__container">
+              <% games.forEach(function(games){ %>
+                <%- include('gamesCard', {games}) %>
+                  <% }); %>
+            </div>
+          </section>
+          <!-- ENDS MAIN Content -->
+          <!-- START Services Content -->
+          <%- include('../partials/services-section') -%>
+        </main>
+        <!-- START Footer Content -->
+        <%- include('../partials/footer') -%>
   </body>
+
 </html>

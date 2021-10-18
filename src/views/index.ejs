@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <!-- START Head Content -->
 <%- include('partials/head') -%>
 
   <body class="body__index">
     <!-- START Header Content -->
     <%- include('partials/header') -%>
-
       <!-- START Slider Flickity -->
       <%- include('partials/slider') -%>
         <!-- START MAIN Content -->
@@ -46,7 +45,7 @@
               </span>
             </div>
 
-            <div class="cards__container dragscroll">
+            <div class="cards__container">
               <% gamesPs5.forEach(function(games){ %>
                 <%- include('partials/mainCard', {games}) %>
                   <% }); %>

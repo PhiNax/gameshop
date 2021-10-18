@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <%- include('../partials/head') -%>
-    <link rel="stylesheet" href="./css/cart.css" type="text/css" />
-  </head>
-  <body class="body__cart">
-    <%- include('../partials/header') -%>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') -%>
+    <link rel="stylesheet" href="/css/cart.css" type="text/css" />
+</head>
+
+<body class="body__cart">
+  <%- include('../partials/header') -%>
     <main class="main__cart">
       <section class="cart__navbar">
         <div class="title">
@@ -54,11 +56,7 @@
 
       <section class="cart__checkout__container">
         <div class="cart__discount">
-          <input
-            type="text"
-            name="cart-discount"
-            placeholder="Cupon de descuento"
-          />
+          <input type="text" name="cart-discount" placeholder="Cupon de descuento" />
           <button type="submit">Agregar</button>
         </div>
         <div class="cart__checkout__total">
@@ -71,5 +69,6 @@
       </section>
     </main>
     <%- include('../partials/footer') -%>
-  </body>
+</body>
+
 </html>

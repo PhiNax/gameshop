@@ -123,12 +123,8 @@
 /* ENDS SERVICES */
 
 /* ENDS MAIN INDEX */
-
 /* START GAME DETAILS */
-.main__game__details {
-  width: 100%;
-  height: auto;
-  margin: auto;
+.body__game__details {
   background-color: #e6e8ea; /*#002650*/
 }
 .detail__background {
@@ -263,9 +259,9 @@
   text-decoration: none;
   color: #0c4591;
 }
-
 .main__detail__section {
   width: 80%;
+  margin: auto;
 }
 /* END GAME DETAILS */
 
