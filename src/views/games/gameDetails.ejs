@@ -6,7 +6,7 @@
   <body>
     <!-- START Header Content -->
     <%- include('../partials/header') -%>
-      <main>
+      <main class="main__game__details">
         <!-- START MAIN Content -->
         <div class="detail__background">
           <img src="<%= games[0].backgroundImage %>" alt="" />
@@ -76,22 +76,24 @@
           </div>
         </div>
         <!-- Section -->
-        <section class="gameList__wrapper">
-          <div class="gameList__title">
-            <span class="gameList__span__title">
-              <%= games[0].platform %> Games
-            </span>
-          </div>
+        <div class="main__detail__section">
+          <section class="gameList__wrapper">
+            <div class="gameList__title">
+              <span class="gameList__span__title">
+                <%= games[0].platform %> Games
+              </span>
+            </div>
 
-          <div class="cards__container">
-            <% gamesList.forEach(function(games){ %>
-              <%- include('../partials/mainCard', {games}) %>
-                <% }); %>
-          </div>
-        </section>
+            <div class="cards__container">
+              <% gamesList.forEach(function(games){ %>
+                <%- include('../partials/mainCard', {games}) %>
+                  <% }); %>
+            </div>
+          </section>
 
-        <!-- START Services Content -->
-        <%- include('../partials/services-section') -%>
+          <!-- START Services Content -->
+          <%- include('../partials/services-section') -%>
+        </div>
       </main>
       <!-- START Footer Content -->
       <%- include('../partials/footer') -%>
