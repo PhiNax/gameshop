@@ -28,10 +28,10 @@
 /* ENDS SLIDER INDEX */
 
 /* BEST SELLER CONTENT */
-.bestseller__wrapper {
+.gameList__wrapper {
   padding: 1rem;
 }
-.bestseller__title {
+.gameList__title {
   font-size: 1.5rem;
   color: #0e86ca;
   letter-spacing: 1px;
@@ -42,7 +42,7 @@
   position: relative;
   margin-bottom: 15px;
 }
-.title:before {
+.gameList__span__title:before {
   content: "";
   position: absolute;
   width: 62px;
@@ -142,7 +142,7 @@
   .main__index {
     width: 100%;
   }
-  .bestseller__title {
+  .gameList__title {
     font-size: 1.3rem;
     text-align: left;
   }
@@ -325,10 +325,10 @@
     height: auto;
     margin: auto;
   }
-  .bestseller__wrapper {
+  .gameList__wrapper {
     padding: 2rem;
   }
-  .bestseller__title {
+  .gameList__title {
     font-size: 1.6rem;
   }
 

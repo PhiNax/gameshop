@@ -74,6 +74,24 @@
             <div class="secure__icons"><i class="fas fa-lock"></i> Your transaction is secure</div>
             <div><a class="secure__details" href="#">See our secure transaction details</a></div>
           </div>
+        </div>
+        <!-- Section -->
+        <section class="gameList__wrapper">
+          <div class="gameList__title">
+            <span class="gameList__span__title">
+              <%= games[0].platform %> Games
+            </span>
+          </div>
+
+          <div class="cards__container">
+            <% gamesList.forEach(function(games){ %>
+              <%- include('../partials/mainCard', {games}) %>
+                <% }); %>
+          </div>
+        </section>
+
+        <!-- START Services Content -->
+        <%- include('../partials/services-section') -%>
       </main>
       <!-- START Footer Content -->
       <%- include('../partials/footer') -%>

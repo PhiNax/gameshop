@@ -8,7 +8,7 @@ const controller = {
 
         const games = await Game.findAll({
             where: {
-                platform_slug: platformName,
+                platform_slug: platformName
             }
         });
         res.render('games/gamesList', { games });
@@ -19,10 +19,17 @@ const controller = {
 
         const games = await Game.findAll({
             where: {
-                id: gameId,
+                id: gameId
             }
         });
-        res.render('games/gameDetails', { games });
+
+        const gamesList = await Game.findAll({
+            where: {
+                platform: games[0].platform
+            }
+        });
+
+        res.render('games/gameDetails', { games, gamesList });
     }
 };
 
