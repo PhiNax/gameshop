@@ -1,5 +1,5 @@
 /* START FOOTER */
-.footer {
+.footer-container {
   background: url(../img/bg-footer3.webp);
   background-size: cover;
   padding: 15px;
@@ -48,7 +48,7 @@
 
 /* MEDIA QUERY*/
 @media screen and (min-width: 768px) {
-  .footer {
+  .footer-container {
     padding-bottom: 15px;
     margin-bottom: 0;
   }
@@ -56,7 +56,7 @@
     height: auto;
   }
   .footer__block {
-    flex: 1 0;
+    flex: 0 0 auto;
   }
 }
 

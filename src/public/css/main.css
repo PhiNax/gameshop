@@ -14,9 +14,8 @@
 .flickity-viewport {
   height: 125px !important;
 }
-.flickity-prev-next-button {
-  width: 25px;
-  height: 25px;
+.flickity-button {
+  display: none;
 }
 .carousel-cell {
   width: 100%;
