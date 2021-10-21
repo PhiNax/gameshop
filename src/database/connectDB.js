@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
     DB_USER = 'b173f9d71e85c6',
     DB_PASS = 'a9dc9374',
     {
-        host: 'us - cdbr - east - 04.cleardb.com',
+        host: 'us-cdbr-east-04.cleardb.com',
         dialect: 'mysql'
     })
 
