@@ -21,10 +21,6 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false,
         },
-        coverImage: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
         backgroundImage: {
             type: DataTypes.STRING,
             allowNull: false

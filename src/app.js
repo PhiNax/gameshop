@@ -17,7 +17,7 @@ const dashboardRouter = require('./routes/dashboardRoutes');
 const methodOverride = require('method-override');
 
 // Create PORT variable with process.env
-const PORT = process.env.PORT;
+const PORT = process.env.PORT | 3000;
 // Set public folder
 const staticFolder = path.resolve(__dirname, './public');
 // Build a express app

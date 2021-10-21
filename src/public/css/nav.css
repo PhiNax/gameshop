@@ -134,7 +134,7 @@
   left: 0;
   background-color: #111;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: ease 0.3s;
   padding-top: 60px;
 }
 .sidebar__link {
@@ -143,7 +143,7 @@
   font-size: 1.5rem;
   color: #818181;
   display: block;
-  transition: 0.3s;
+  transition: ease 0.3s;
 }
 .sidebar__link:hover {
   color: #f1f1f1;
