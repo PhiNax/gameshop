@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
 
 const sequelize = new Sequelize(
-    DB_NAME = heroku_682e2d214f754e2,
-    DB_USER = b173f9d71e85c6,
-    DB_PASS = a9dc9374,
+    DB_NAME = 'heroku_682e2d214f754e2',
+    DB_USER = 'b173f9d71e85c6',
+    DB_PASS = 'a9dc9374',
     {
-        host: us - cdbr - east - 04.cleardb.com,
+        host: 'us - cdbr - east - 04.cleardb.com',
         dialect: 'mysql'
     })
 
