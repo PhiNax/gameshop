@@ -4,19 +4,30 @@ const { Game } = require('../database/connectDB');
 const controller = {
     // Index Dashboard or List Games
     dashboard: async (req, res) => {
-        const games = await Game.findAll();
-        res.render('admin/dashboard', { games });
+        try {
+            const games = await Game.findAll();
+            res.render('admin/dashboard', { games });
+        }
+        catch (err) {
+            throw 'Dashboard FindAll Games error => ' + err;
+        }
     },
     // List Games for platform
     platform: async (req, res) => {
-        const platformName = req.params.id
+        try {
+            const platformName = req.params.id
 
-        const games = await Game.findAll({
-            where: {
-                platform_slug: platformName,
-            }
-        });
-        res.render('admin/dashboardByPlatform', { games });
+            const games = await Game.findAll({
+                where: {
+                    platform_slug: platformName
+                }
+            });
+
+            res.render('admin/dashboardByPlatform', { games });
+        }
+        catch (err) {
+            throw 'Dashboard Platform FindAll Games error => ' + err;
+        }
     },
     // Create - Form to create
     create: (req, res) => {

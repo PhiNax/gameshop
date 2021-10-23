@@ -1,62 +1,50 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <%- include('../partials/head') -%>
-    <link rel="stylesheet" href="./css/register.css" type="text/css" />
-  </head>
+<html lang="en">
 
-  <body>
-    <%- include('../partials/header') -%>
+<head>
+  <%- include('../partials/head') -%>
+    <link rel="stylesheet" href="/css/register.css" type="text/css" />
+</head>
+
+<body>
+  <%- include('../partials/header') -%>
     <main class="main__register">
       <div class="card__register">
         <div class="form__title"><span>Register</span></div>
         <form class="form__register" action="/register" method="post">
           <% if (locals.errors && errors.name) { %>
-          <p class="feedback"><%= errors.name %></p>
-          <% } %>
-          <div class="firstname">
-            <label for="firstName">First Name</label>
-            <input
-              type="text"
-              name="firstName"
-              tabindex="13"
-              value="<%= locals.old && old.firstname %>"
-            />
-          </div>
-          <div class="lastname">
-            <label for="lastName">Last Name</label>
-            <input
-              type="text"
-              name="lastName"
-              tabindex="14"
-              value="<%= locals.old && old.lastname %>"
-            />
-          </div>
-          <div class="email">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              name="email"
-              tabindex="15"
-              value="<%= locals.old && old.email %>"
-            />
-          </div>
-          <div class="password">
-            <label for="password">Password</label>
-            <input type="password" name="password" tabindex="16" />
-          </div>
-          <div class="passwordC">
-            <label for="passwordC">Repeat Password</label>
-            <input type="password" name="passwordC" tabindex="17 " />
-          </div>
-          <div class="form__terms">
-            <input type="checkbox" name="terms" tabindex="18" />
-            <label for="terms">I agree with the terms and conditions</label>
-          </div>
+            <p class="feedback">
+              <%= errors.name %>
+            </p>
+            <% } %>
+              <div class="firstname">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" tabindex="13" value="<%= locals.old && old.firstname %>" />
+              </div>
+              <div class="lastname">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" tabindex="14" value="<%= locals.old && old.lastname %>" />
+              </div>
+              <div class="email">
+                <label for="email">Email</label>
+                <input type="email" name="email" tabindex="15" value="<%= locals.old && old.email %>" />
+              </div>
+              <div class="password">
+                <label for="password">Password</label>
+                <input type="password" name="password" tabindex="16" />
+              </div>
+              <div class="passwordC">
+                <label for="passwordC">Repeat Password</label>
+                <input type="password" name="passwordC" tabindex="17 " />
+              </div>
+              <div class="form__terms">
+                <input type="checkbox" name="terms" tabindex="18" />
+                <label for="terms">I agree with the terms and conditions</label>
+              </div>
 
-          <button type="submit" class="button__register" tabindex="19">
-            Register
-          </button>
+              <button type="submit" class="button__register" tabindex="19">
+                Register
+              </button>
         </form>
         <div class="form__gologin">
           <span>Already Registered?</span>
@@ -65,5 +53,6 @@
       </div>
     </main>
     <%- include('../partials/footer') -%>
-  </body>
+</body>
+
 </html>

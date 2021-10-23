@@ -228,6 +228,7 @@
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 .detail__price {
   font-size: 3rem;

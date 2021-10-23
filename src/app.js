@@ -36,11 +36,11 @@ app.use(express.json());
 // Set app to override method on form
 app.use(methodOverride('_method')); // method="POST" on form to use PUT y DELETE
 // Set app to use session storage
-/*app.use(session({
+app.use(session({
     secret: 'cat on the roof',
     resave: false,
     saveUninitialized: true,
-}));*/
+}))
 // Set View Engine EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
