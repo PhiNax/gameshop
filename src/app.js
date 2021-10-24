@@ -1,13 +1,15 @@
 // Call express module
 const express = require('express');
 // Call dotenv module
-require('dotenv').config()
+require('dotenv').config();
 // Connect to DB
 require('./database/connectDB');
 // Call path module
 const path = require('path');
 // Call Session module
-const session = require('express-session')
+const session = require('express-session');
+
+const cookieParser = require('cookie-parser');
 // Call routes
 const mainRouter = require('./routes/mainRoutes');
 const gamesRouter = require('./routes/gamesRoutes');
@@ -17,7 +19,7 @@ const dashboardRouter = require('./routes/dashboardRoutes');
 const methodOverride = require('method-override');
 
 // Create PORT variable with process.env
-const PORT = process.env.PORT | 3000;
+const PORT = process.env.PORT;
 // Set public folder
 const staticFolder = path.resolve(__dirname, './public');
 // Build a express app
@@ -34,7 +36,9 @@ app.use(express.urlencoded({ extended: false }));
 // Set app to use json pharse
 app.use(express.json());
 // Set app to override method on form
-app.use(methodOverride('_method')); // method="POST" on form to use PUT y DELETE
+app.use(methodOverride('_method')); // ?_method on form to use PUT y DELETE
+// Set app to use cookieParser
+app.use(cookieParser());
 // Set app to use session storage
 app.use(session({
     secret: 'cat on the roof',

@@ -1,31 +1,27 @@
 <div class="dash__content__form">
-  <form class="dash__form__create" action="/dashboard/update" method="POST">
+  <form class="dash__form__create" action="/dashboard/update?_method=PUT" method="POST">
     <div class="dash__form__title">
       <span>Edit Game</span>
     </div>
     <div class="dash_div">
       <label for="name">Name:</label>
-      <input type="text" name="name" value="<%= games[0].name %>"/>
+      <input type="text" name="name" value="<%= games[0].name %>" />
     </div>
     <div class="dash_div">
       <label for="description">Description:</label>
-      <input type="text" name="description" value="<%= games[0].description %>"/>
+      <input type="text" name="description" value="<%= games[0].description %>" />
     </div>
     <div class="dash_div">
       <label for="platform">Platform:</label>
-      <input type="text" name="platform" value="<%= games[0].platform %>"/>
+      <input type="text" name="platform" value="<%= games[0].platform %>" />
     </div>
     <div class="dash_div">
       <label for="platform_slug">Platform Slug:</label>
-      <input type="text" name="platform_slug" value="<%= games[0].platform_slug %>"/>
+      <input type="text" name="platform_slug" value="<%= games[0].platform_slug %>" />
     </div>
     <div class="dash_div">
       <label for="released">Released:</label>
       <input type="text" name="released" value="<%= games[0].released %>" />
-    </div>
-    <div class="dash_div">
-      <label for="coverImage">Cover Image:</label>
-      <input type="text" name="coverImage" value="<%= games[0].coverImage %>" />
     </div>
     <div class="dash_div">
       <label for="backgroundImage">Background Image:</label>
@@ -45,12 +41,15 @@
     </div>
     <div class="dash_div">
       <label for="price">Price:</label>
-      <input type="text" name="price" value="<%= games[0].price %>"/>
+      <input type="text" name="price" value="<%= games[0].price %>" />
     </div>
 
     <div class="dash_div">
       <button class="button__create" type="submit" value="Edit" />Edit
       <button class="button__create" type="reset" value="Reset" />Reset
+      <form action="/dashboard/delete?_method=DELETE" method="POST">
+        <button id="btnDelete" class="button__create" type="delete" value="Delete" />Delete
+      </form>
     </div>
   </form>
 </div>

@@ -14,9 +14,9 @@ router.post('/store', dashboardController.store);
 
 router.get('/edit/:id', dashboardController.edit);
 
-router.post('/update', dashboardController.update);
+router.put('/update', dashboardController.update);
 
-router.post('/delete', dashboardController.destroy);
+router.put('/delete', dashboardController.destroy);
 
 router.get('/platform/:id', dashboardController.platform);
 

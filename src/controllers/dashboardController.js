@@ -2,17 +2,18 @@
 const { Game } = require('../database/connectDB');
 
 const controller = {
-    // Index Dashboard or List Games
+    // Dashboard: List All Games
     dashboard: async (req, res) => {
         try {
             const games = await Game.findAll();
+
             res.render('admin/dashboard', { games });
         }
         catch (err) {
-            throw 'Dashboard FindAll Games error => ' + err;
+            throw 'Dashboard: FindAll Games Error => ' + err;
         }
     },
-    // List Games for platform
+    // Dashboard: List Games by platform
     platform: async (req, res) => {
         try {
             const platformName = req.params.id
@@ -26,10 +27,10 @@ const controller = {
             res.render('admin/dashboardByPlatform', { games });
         }
         catch (err) {
-            throw 'Dashboard Platform FindAll Games error => ' + err;
+            throw 'Dashboard: Find Games By Platform Error => ' + err;
         }
     },
-    // Create - Form to create
+    // Dashboard: Form to create a new game
     create: (req, res) => {
         res.render('admin/dashboardCreate');
     },
@@ -48,23 +49,31 @@ const controller = {
             esrbRating: req.body.esrbRating,
             price: req.body.price
         };
-        await Game.create(newGame)
-            .then(() => {
-                // Render created Product by ID
-                res.redirect('admin/dashboard');
-            })
-            .catch((error) => { console.log(error) })
+        try {
+            await Game.create(newGame)
+            // Render created Product by ID
+            res.redirect('admin/dashboard');
+        }
+        catch (err) {
+            throw 'Dashboard: Create New Game Failed => ' + err;
+        }
     },
     // Get Form to edit by ID
     edit: async (req, res) => {
-        const id = req.params.id;
+        try {
+            const id = req.params.id;
 
-        const games = await Game.findAll({
-            where: {
-                id: id,
-            }
-        });
-        res.render('admin/dashboardEdit', { games });
+            const games = await Game.findAll({
+                where: {
+                    id: id
+                }
+            });
+
+            res.render('admin/dashboardEdit', { games });
+        }
+        catch (err) {
+            throw 'Dashboard: Find Game By Id Error => ' + err;
+        }
     },
     // Update - Method to update
     update: async (req, res) => {

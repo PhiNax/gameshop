@@ -26,9 +26,9 @@ const GameSchema = require('../models/gamesSchema');
 const Game = GameSchema(sequelize, Sequelize, Sequelize);
 
 // Synchornize only for create new tables
-
+/*
 sequelize.sync({ force: false })
     .then(() => { console.log('Tables Users and Games synchronized to dababase'); })
     .catch(error => { conso.log(error); });
-
+*/
 module.exports = { User, Game }
