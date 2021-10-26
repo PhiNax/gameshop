@@ -43,7 +43,7 @@ app.use(cookieParser());
 app.use(session({
     secret: 'cat on the roof',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
 }))
 // Set View Engine EJS
 app.set('view engine', 'ejs');
