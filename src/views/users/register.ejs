@@ -7,7 +7,8 @@
     <%- include('../partials/header') -%>
       <main class="main__register">
         <div class="card__register">
-          <div class="form__title"><span>Register</span></div>
+          <div class="form__title"><span>New Account</span>
+          </div>
           <form class="form__register" action="/register" method="POST">
             <% if (locals.errors) { %>
               <%= console.log(locals.errors) %>
@@ -38,7 +39,7 @@
                     <input type="password" name="passwordC" tabindex="17 " />
                   </div>
                   <div class="form__terms">
-                    <input type="checkbox" name="terms" tabindex="18" />
+                    <input type="checkbox" name="terms" id="terms" tabindex="18" />
                     <label for="terms">I agree with the terms and conditions</label>
                   </div>
 

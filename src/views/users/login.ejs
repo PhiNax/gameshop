@@ -7,7 +7,9 @@
     <%- include('../partials/header') -%>
       <main class="main__login">
         <div class="card__login">
-          <div class="form__title"><span>Login</span></div>
+          <div class="form__title">
+            <span>Hi, welcome back! 👋</span>
+          </div>
           <form class="form__login" action="/login" method="post">
             <div class="email">
               <label for="email">Email</label>
@@ -22,7 +24,7 @@
             </div>
 
             <div class="form__remember">
-              <input type="checkbox" name="remember" tabindex="15" />
+              <input type="checkbox" id="remember" name="remember" tabindex="15" />
               <label for="remember">Remember me</label>
             </div>
 
