@@ -1,3 +1,6 @@
+@import "login.css";
+@import "register.css";
+
 /* START MAIN INDEX */
 .body__index {
   background-color: #e6e8ea;
