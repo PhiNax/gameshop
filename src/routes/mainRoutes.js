@@ -3,8 +3,9 @@ const express = require('express');
 const router = express.Router();
 
 const mainController = require('../controllers/mainController');
+const userController = require('../controllers/userController');
 
-const validate = require('../middleware/validator');
+const validateRegister = require('../middleware/validator');
 
 // Set Routes
 // Index Route
@@ -14,17 +15,16 @@ router.get('/', mainController.index);
 //router.get('/productDetails', mainController.detail);
 
 // Cart Details Route
-router.get('/cart', mainController.cart);
-
+router.get('/cart', userController.cart);
 // Login Route
-router.get('/login', mainController.login);
+router.get('/login', userController.login);
 // Login User
-router.post('/login', mainController.loginUser);
+router.post('/login', userController.loginUser);
 // Logout User
-router.get('/logout', mainController.logoutUser);
+router.get('/logout', userController.logoutUser);
 // Register Route
-router.get('/register', mainController.register);
+router.get('/register', userController.register);
 // Create New User
-router.post('/register', mainController.createUser);
+router.post('/register', validateRegister, userController.createUser);
 
 module.exports = router;

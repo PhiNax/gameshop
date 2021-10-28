@@ -21,7 +21,7 @@ const controller = {
         let passHash = bcrypt.hash(password, 10);
 
         if (email && password) {
-            await User.query('SELECT * FROM users WHERE email = ?', [email])
+            await sequelize.query('SELECT * FROM users WHERE email = ?', [email])
         }
         res.render('/'), { user: User.firstName }
     },
@@ -39,13 +39,7 @@ const controller = {
     // Create New User from form
     createUser: async (req, res) => {
         const errors = validationResult(req);
-        console.log('--------------------------------')
-        console.log('--------------------------------')
-        console.log('--------------------------------')
-        console.log(errors.mapped());
-        console.log('--------------------------------')
-        console.log(errors.isEmpty())
-        console.log('--------------------------------')
+
         if (errors.isEmpty()) {
 
             let passCrypt = bcrypt.hashSync(req.body.password, 10);
@@ -56,7 +50,7 @@ const controller = {
                 email: req.body.email,
                 password: passCrypt,
                 agreeTerms: req.body.terms,
-                access: '1',
+                access: '1'
             }
             try {
                 await User.create(newUser);
