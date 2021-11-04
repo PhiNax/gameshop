@@ -10,6 +10,7 @@ const path = require('path');
 const session = require('express-session');
 
 const cookieParser = require('cookie-parser');
+
 // Call routes
 const mainRouter = require('./routes/mainRoutes');
 const gamesRouter = require('./routes/gamesRoutes');
@@ -56,7 +57,6 @@ app.use('/', mainRouter);
 app.use('/games', gamesRouter);
 // Admin Dashboard Routes
 app.use('/dashboard', /* userAuth */ dashboardRouter);
-
 
 // 404 Routes
 app.use((req, res, next) => {
