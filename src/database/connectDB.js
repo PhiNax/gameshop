@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -9,21 +9,21 @@ const sequelize = new Sequelize(
         dialect: 'mysql'
     })
 
-sequelize.authenticate()
-    .then(() => {
-        console.log('Connection has been established successfully.');
-    })
-    .catch(error => {
-        console.error('Unable to connect to the database:', error);
-    });
+try {
+    sequelize.authenticate()
+    console.log('Connection has been established successfully.');
+}
+catch (err) {
+    throw new Error('Unable to connect to the database:', err);
+};
 
 // User Schema    
 const UserSchema = require('../models/usersSchema');
-const User = UserSchema(sequelize, Sequelize, Sequelize);
+const User = UserSchema(sequelize, Sequelize, DataTypes);
 
 // Game Schema 
 const GameSchema = require('../models/gamesSchema');
-const Game = GameSchema(sequelize, Sequelize, Sequelize);
+const Game = GameSchema(sequelize, Sequelize, DataTypes);
 
 // Synchornize only for create new tables
 /*
