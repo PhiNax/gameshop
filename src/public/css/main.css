@@ -4,7 +4,7 @@
 /* START MAIN INDEX */
 .body__index {
   background-color: #e6e8ea;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .main__index {
   width: 100%;
@@ -17,9 +17,9 @@
 .flickity-viewport {
   height: 125px !important;
 }
-.flickity-button {
+/*.flickity-button {
   display: none;
-}
+}*/
 .carousel-cell {
   width: 100%;
   height: auto;
@@ -32,6 +32,7 @@
 /* GAME LIST CONTENT */
 .gameList__wrapper {
   padding: 1rem;
+  overflow: hidden;
 }
 .gameList__title {
   font-size: 1.5rem;
@@ -62,29 +63,52 @@
   align-items: center;
   position: relative;
 }
+
 .card__item {
-  width: 60%;
+  max-width: 280px;
   height: auto;
   color: black;
   background: #fff;
   flex: 0 0 25%;
+  border-radius: 17px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .card__img {
   height: auto;
 }
 .card__img img {
-  width: 100%;
+  width: 280px;
+  height: 180px;
   object-fit: fill;
   object-position: center center;
+  border-radius: 17px 17px 0 0;
 }
 .card__content {
   height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px 15px;
+  margin-bottom: 15px;
 }
 .card__title {
   font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
   padding: 10px;
+}
+.card__button_content {
+  align-self: center;
+}
+.card__button__add {
+  background-color: #0c4591;
+  border-color: transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 2px 6px #1f4d8a;
 }
 /* ENDS CARDS */
 
@@ -337,14 +361,7 @@
 
   .card__item {
     height: 360px;
-    transition: 0.5s ease;
   }
-  /* HOVER EFFECT IMG*/
-  .card__item:hover {
-    transform: scale(1.1);
-    transition: 0.5s ease;
-  }
-  /* ENDS HOVER EFFECT IMG*/
   .card__title {
     font-size: 1.1rem;
   }
