@@ -9,48 +9,48 @@
         <div class="card__register">
           <div class="form__title"><span>New Account</span>
           </div>
-          <form class="form__register" action="/register" method="POST">
-            <% if (locals.errors) { %>
-              <%= console.log(locals.errors) %>
-                <p class="feedback">
-                  <%= locals.errors.name %>
-                    <%= locals.errors.msg %>
-                </p>
+          <% if (locals.errors) { %>
+            <% for( let error in errors ) { %>
+              <span class="form__errors"><i class="fas fa-exclamation-triangle form__alert"></i>
+                <%= errors[error].msg %>
+              </span>
+              <% } %>
                 <% } %>
-                  <div class="firstname">
-                    <label for="firstName">First Name</label>
-                    <input type="text" name="firstName" tabindex="13" value="<%= locals.old && old.firstName %>"
-                      autofocus />
-                  </div>
-                  <div class="lastname">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" name="lastName" tabindex="14" value="<%= locals.old && old.lastName %>" />
-                  </div>
-                  <div class="email">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" tabindex="15" value="<%= locals.old && old.email %>" />
-                  </div>
-                  <div class="password">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" tabindex="16" />
-                  </div>
-                  <div class="passwordC">
-                    <label for="passwordC">Repeat Password</label>
-                    <input type="password" name="passwordC" tabindex="17 " />
-                  </div>
-                  <div class="form__terms">
-                    <input type="checkbox" name="terms" id="terms" tabindex="18" />
-                    <label for="terms">I agree with the terms and conditions</label>
-                  </div>
+                  <form class="form__register" action="/register" method="POST">
+                    <div class="firstname">
+                      <label for="firstName">First Name</label>
+                      <input type="text" name="firstName" tabindex="13" value="<%= locals.old && old.firstName %>"
+                        autofocus />
+                    </div>
+                    <div class="lastname">
+                      <label for="lastName">Last Name</label>
+                      <input type="text" name="lastName" tabindex="14" value="<%= locals.old && old.lastName %>" />
+                    </div>
+                    <div class="email">
+                      <label for="email">Email</label>
+                      <input type="email" name="email" tabindex="15" value="<%= locals.old && old.email %>" />
+                    </div>
+                    <div class="password">
+                      <label for="password">Password</label>
+                      <input type="password" name="password" tabindex="16" />
+                    </div>
+                    <div class="passwordC">
+                      <label for="passwordC">Repeat Password</label>
+                      <input type="password" name="passwordC" tabindex="17 " />
+                    </div>
+                    <div class="form__terms">
+                      <input type="checkbox" id="terms" name="terms" value="accept" tabindex="18" />
+                      <label for="terms">I agree with the terms and conditions</label>
+                    </div>
 
-                  <button type="submit" class="button__register" tabindex="19">
-                    Register
-                  </button>
-          </form>
-          <div class="form__gologin">
-            <span>Already Registered?</span>
-            <a href="/login" tabindex="20">Login</a>
-          </div>
+                    <button type="submit" class="button__register" tabindex="19">
+                      Register
+                    </button>
+                  </form>
+                  <div class="form__gologin">
+                    <span>Already Registered?</span>
+                    <a href="/login" tabindex="20">Login</a>
+                  </div>
         </div>
       </main>
       <%- include('../partials/footer') -%>

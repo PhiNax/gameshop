@@ -1,7 +1,7 @@
 // Call result validation errors
 const { validationResult } = require('express-validator');
 // Call Bcrypt for encrypt passwords
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 // Call User Model 
 const { User } = require('../database/connectDB');
 
@@ -16,14 +16,37 @@ const controller = {
     },
     // Login User
     loginUser: async (req, res) => {
-        let email = req.body.email;
-        let password = req.body.password;
-        let passHash = bcrypt.hash(password, 10);
+        const errors = validationResult(req);
 
-        if (email && password) {
-            await sequelize.query('SELECT * FROM users WHERE email = ?', [email])
+        if (errors.isEmpty()) {
+
+            const email = req.body.email;
+            const password = req.body.password;
+
+            try {
+                const userLogin = await User.findOne({
+                    where: {
+                        email: email
+                    }
+                });
+                if (userLogin && await bcrypt.compare(password, userLogin.password)) {
+                    req.session.userLogged = userLogin;
+                    res.redirect('/');
+                } else {
+                    const errors = {
+                        credentials: {
+                            msg: 'Credentials do not match'
+                        }
+                    };
+                    res.render('users/login', { errors: errors, old: req.body });
+                }
+            }
+            catch (err) {
+                throw 'Login User: Error => ' + err;
+            }
+        } else {
+            res.render('users/login', { errors: errors.mapped(), old: req.body });
         }
-        res.render('/'), { user: User.firstName }
     },
     // Logout User
     logoutUser: (req, res) => {
@@ -42,7 +65,7 @@ const controller = {
 
         if (errors.isEmpty()) {
 
-            let passCrypt = bcrypt.hashSync(req.body.password, 10);
+            let passCrypt = await bcrypt.hash(req.body.password, 10);
 
             let newUser = {
                 firstName: req.body.firstName,
