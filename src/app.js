@@ -8,9 +8,12 @@ require('./database/connectDB');
 const path = require('path');
 // Call Session module
 const session = require('express-session');
+// Call Middleware to check if user is logged in
+const userLoggedMiddlevare = require('./middleware/userLoggedMiddlevare');
 
 // Call routes
 const mainRouter = require('./routes/mainRoutes');
+const usersRouter = require('./routes/usersRoutes');
 const gamesRouter = require('./routes/gamesRoutes');
 const dashboardRouter = require('./routes/dashboardRoutes');
 
@@ -47,14 +50,18 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 60000 }
 }));
+// Global middleware to check if user is logged in
+app.use(userLoggedMiddlevare);
 
 // Use Routes
 // Main Routes
 app.use('/', mainRouter);
+// User Routes
+app.use('/user', usersRouter);
 // Products Routes
 app.use('/games', gamesRouter);
 // Admin Dashboard Routes
-app.use('/dashboard', /* userAuth */ dashboardRouter);
+app.use('/dashboard', dashboardRouter);
 // 404 Routes
 app.use((req, res, next) => {
     res.status(404).render('404-not-found');

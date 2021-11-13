@@ -6,6 +6,11 @@ const bcrypt = require('bcryptjs');
 const { User } = require('../database/connectDB');
 
 const controller = {
+    // Profiles user Logged in
+    profile: (req, res) => {
+        res.render('users/profile');
+
+    },
     // Cart
     cart: (req, res) => {
         res.render('users/cart');
@@ -30,7 +35,10 @@ const controller = {
                     }
                 });
                 if (userLogin && await bcrypt.compare(password, userLogin.password)) {
-                    req.session.userLogged = userLogin;
+                    req.session.userLogged = {
+                        email: userLogin.email,
+                        firstName: userLogin.firstName
+                    };
                     res.redirect('/');
                 } else {
                     const errors = {
@@ -42,7 +50,7 @@ const controller = {
                 }
             }
             catch (err) {
-                throw 'Login User: Error => ' + err;
+                throw new Error('Login User: Error => ' + err);
             }
         } else {
             res.render('users/login', { errors: errors.mapped(), old: req.body });
@@ -50,10 +58,8 @@ const controller = {
     },
     // Logout User
     logoutUser: (req, res) => {
-        res.clearCookie('user')
-        req.session.destroy(() => {
-            res.redirect('/');
-        });
+        req.session.destroy();
+        res.clearCookie('connect.sid').redirect('/');
     },
     // Register
     register: (req, res) => {
@@ -77,10 +83,10 @@ const controller = {
             }
             try {
                 await User.create(newUser);
-                res.redirect('/');
+                res.redirect('/user/login');
             }
             catch (err) {
-                throw 'Create New User: Error => ' + err;
+                throw new Error('Create New User: Error => ' + err);
             }
         } else {
             res.render('users/register', { errors: errors.mapped(), old: req.body });
