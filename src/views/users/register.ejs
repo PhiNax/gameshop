@@ -7,7 +7,7 @@
     <%- include('../partials/header') -%>
       <main class="main__register">
         <div class="card__register">
-          <div class="form__title"><span>New Account</span>
+          <div class="form__title"><span>Create your Account</span>
           </div>
           <% if (locals.errors) { %>
             <% for( let error in errors ) { %>
@@ -16,7 +16,7 @@
               </span>
               <% } %>
                 <% } %>
-                  <form class="form__register" action="/register" method="POST">
+                  <form class="form__register" action="/user/register" method="POST">
                     <div class="firstname">
                       <label for="firstName">First Name</label>
                       <input type="text" name="firstName" tabindex="13" value="<%= locals.old && old.firstName %>"
@@ -49,7 +49,7 @@
                   </form>
                   <div class="form__gologin">
                     <span>Already Registered?</span>
-                    <a href="/login" tabindex="20">Login</a>
+                    <a href="/user/login" tabindex="20">Login</a>
                   </div>
         </div>
       </main>
