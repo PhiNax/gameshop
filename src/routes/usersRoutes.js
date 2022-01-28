@@ -1,29 +1,38 @@
 const express = require('express');
 const router = express.Router();
+// Call Users controller
+const usersController = require('../controllers/usersController');
+// Call Validator for Register form
+const validateRegister = require('../middleware/registerValidator');
 
-const userController = require('../controllers/userController');
+// Call Validator for Login form
+const validateLogin = require('../middleware/loginValidator')
 
-const { validateRegister, validateLogin } = require('../middleware/formValidator');
+// Call guestMiddleware to check if user is already registered
+const guestMiddleware = require('../middleware/guestMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
 
-const { authMiddleware, guestMiddleware } = require('../middleware/userAuth');
+// Call multer middleware to upload user avatar image
+const uploadAvatar = require('../middleware/multer');
 
-// Login form
-router.get('/login', authMiddleware, userController.login);
-// Login User
-router.post('/login', validateLogin, userController.loginUser);
+// Register Route
+router.get('/register', guestMiddleware, usersController.register);
 
-// Register form
-router.get('/register', authMiddleware, userController.register);
-// Create New User
-router.post('/register', validateRegister, userController.createUser);
+router.post('/createuser', uploadAvatar.single('userimage'), validateRegister, usersController.createUser);
 
-// Profile User
-router.get('/profile', guestMiddleware, userController.profile);
+// Login Route
+router.get('/login', guestMiddleware, usersController.login);
 
-// Logout User
-router.get('/logout', userController.logoutUser);
+// Procesar el login
+router.post('/login', validateLogin, usersController.loginProcess);
 
-// User Cart Details
-router.get('/cart', guestMiddleware, userController.cart);
+// Logout
+router.get('/logout', usersController.logout);
+
+// Perfil de Usuario
+router.get('/profile', authMiddleware, usersController.profile);
+
+// Cart Details Route
+router.get('/cart', authMiddleware, usersController.cart);
 
 module.exports = router;

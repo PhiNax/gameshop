@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- START Head Content -->
+<%- include('../partials/head', { data: 'userProfile' }); %>
+
+	<body>
+		<!-- START Header Content -->
+		<%- include('../partials/header.ejs'); %>
+
+			<!-- Container -->
+			<main>
+				<div><span>Hi <%= user.name %>, welcome back! 👋</span></div>
+				<div class="profile__card">
+					<div class="profile__header"></div>
+
+					<div class="profile__content">
+						<div class="profile__avatar">
+							<img src="/img/avatars/<%= user.avatar %>" alt="<%= user.name %>" class="profile__image">
+						</div>
+
+						<div class="profile__data">
+							<div class="profile__row">
+								<%= user.name %>
+							</div>
+							<div class="profile__row">
+								<%= user.email %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<%- include('../partials/footer'); %>
+			</main>
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head_admin') -%>
+
+  <body>
+    <%- include('../partials/header') -%>
+      <main class="main-form-edit">
+
+        <form action="/admin/update/<%= game.id %>?_method=PUT" method="POST" class="form-edit"
+          enctype="multipart/form-data">
+          <div class="form-edit-title">GAME EDIT</div>
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="<%= game.name%>">
+          </div>
+          <div>
+            <label for="description">Description:</label>
+            <input type="text" name="description" value="<%= game.description%>">
+          </div>
+          <div>
+            <label for="coverImage">Cover Image:</label>
+            <input type="file" name="coverImage" accept=".jpg,.png">
+          </div>
+          <div>
+            <label for="rating">Rating:</label>
+            <input type="text" name="rating" value="<%= game.rating%>">
+          </div>
+          <div>
+            <label for="price">Price:</label>
+            <input type="text" name="price" value="<%= game.price%>">
+          </div>
+          <div class="category">
+            <input type="radio" name="category" id="action" value="1" />
+            <label for="action">Action</label>
+            <input type="radio" name="category" id="adventure" value="2" />
+            <label for="adventure">Adventure</label>
+            <input type="radio" name="category" id="rpg" value="3" />
+            <label for="rpg">RPG</label>
+            <input type="radio" name="category" id="strategy" value="4" />
+            <label for="strategy">Strategy</label>
+            <input type="radio" name="category" id="shooter" value="5" />
+            <label for="shooter">Shooter</label>
+            <input type="radio" name="category" id="simulation" value="6" />
+            <label for="simulation">Simulation</label>
+            <input type="radio" name="category" id="arcade" value="7" />
+            <label for="arcade">Arcade</label>
+            <input type="radio" name="category" id="platformer" value="8" />
+            <label for="platformer">Platformer</label>
+            <input type="radio" name="category" id="racing" value="9" />
+            <label for="racing">Racing</label>
+            <input type="radio" name="category" id="mmo" value="10" />
+            <label for="mmo">MMO</label>
+            <input type="radio" name="category" id="sport" value="11" />
+            <label for="sport">Sport</label>
+            <input type="radio" name="category" id="fighting" value="12" />
+            <label for="fighting">Fighting</label>
+          </div>
+
+          <div class="form-edit-buttons">
+            <button type="submit">SAVE</button>
+            <button type="reset">RESET</button>
+          </div>
+        </form>
+        <form action="/admin/delete/<%= game.id %>?_method=DELETE" method="POST" class="form-delete">
+          <button type="submit">DELETE</button>
+        </form>
+      </main>
+      <%- include('../partials/footer') -%>
+  </body>
+
+</html>

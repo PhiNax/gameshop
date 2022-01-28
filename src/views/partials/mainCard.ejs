@@ -1,18 +1,22 @@
 <div class="card__item">
   <div class="card__img">
-    <a href="/games/<%= games.id %>">
-      <img src="<%= games.backgroundImage %>" alt="" />
+    <a href="/products/<%= game.id %>">
+      <img src="/img/products/cover/<%= game.coverImage %>" alt="<%= game.name %>" />
     </a>
   </div>
   <div class="card__content">
     <div class="card__title">
-      <%= games.name %>
+      <%= game.name %>
     </div>
-    <div>
-      <%= games.price %>
+    <div class="card__section__info">
+      <span>
+        <%= game.gameplatform.name %>
+          <%= game.gamecategory.name %> game
+      </span>
     </div>
-    <div class="">
-      <button class="" type="submit">Add to Cart</button>
+    <div class="card__section">
+      <span>USD <%= game.price %></span>
+      <button class="card__addcart">ADD</button>
     </div>
   </div>
 </div>

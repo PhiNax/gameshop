@@ -1,0 +1,112 @@
+.main-form-edit {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  background-color: #fff;
+  font-size: 0.9rem;
+}
+
+.form-edit {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: auto;
+  border-top: 2px solid #d10431;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  margin: 2rem auto;
+  margin-bottom: 15px;
+  padding: 20px;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%),
+    0 0.9375rem 1.40625rem rgb(90 97 105 / 10%),
+    0 0.25rem 0.53125rem rgb(90 97 105 / 12%),
+    0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+}
+.form-edit-title {
+  font-size: 1.5rem;
+}
+.form-edit div {
+  margin: 7px 0px;
+}
+.form-edit div input {
+  width: 95%;
+  border: 1px solid rgb(130, 130, 130);
+  border-radius: 10px;
+  padding: 15px 0px 15px 15px;
+}
+.form-edit input[type="radio"] {
+  display: none;
+}
+.form-edit .category label {
+  background: #3030cc;
+  border-radius: 999px;
+  box-shadow: #5e5df0 0 10px 20px -10px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 18px;
+  border: 0;
+  display: inline-block;
+  margin: 5px 0px;
+}
+.form-edit input[type="radio"]:checked + label {
+  background-color: rgb(110, 99, 168);
+}
+.form-edit .category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+.form-edit-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.form-edit-buttons button {
+  background-color: black;
+  color: white;
+  width: 30%;
+  height: 30px;
+}
+.form-edit-buttons button:hover {
+  background-color: var(--red);
+}
+
+.form-delete {
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  height: auto;
+  border-bottom: 2px solid #d10431;
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  margin: 1rem auto;
+  margin-bottom: 60px;
+  padding: 20px;
+  box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%),
+    0 0.9375rem 1.40625rem rgb(90 97 105 / 10%),
+    0 0.25rem 0.53125rem rgb(90 97 105 / 12%),
+    0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+}
+.form-delete button {
+  background-color: var(--red);
+  color: white;
+  width: 30%;
+  height: 30px;
+}
+.form-delete button:hover {
+  background-color: var(--black);
+}
+/* MEDIA QUERY*/
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1200px) {
+  .form-edit {
+    width: 40vw;
+  }
+  .form-delete {
+    width: 40vw;
+  }
+}

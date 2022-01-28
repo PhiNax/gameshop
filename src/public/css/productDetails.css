@@ -1,0 +1,233 @@
+/* START GAME DETAILS */
+.body__game__details {
+  background-color: #e6e8ea; /*#002650*/
+}
+.detail__background {
+  display: none;
+  width: 100%;
+}
+.detail__background img {
+  width: 100%;
+  margin-top: -75px;
+}
+.detail__content {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 6px 23px 0 rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+  height: auto;
+  top: -5px;
+}
+.detail__images {
+  flex: 1 0 0;
+}
+.detail__img {
+  width: 100%;
+}
+.detail__images__carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.detail__miniImages {
+  cursor: pointer;
+  width: 100%;
+}
+.detail__details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 0 0 40%;
+  padding: 20px;
+}
+.detail__platform {
+  font-size: 1.3rem;
+}
+.detail__category {
+  font-size: 1.3rem;
+}
+.detail__title {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+.detail__description {
+  display: none;
+}
+.detail__sale {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex: 0 0 20%;
+  padding: 20px;
+  gap: 25px;
+}
+.detail__icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.5rem;
+}
+.favourite__icon {
+  color: #b91717;
+}
+.detail__rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stars__rating {
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  font-size: 1.5rem;
+  font-family: Times;
+  line-height: 1;
+}
+.stars__rating::before {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  background: linear-gradient(
+    90deg,
+    #fc0 var(--percent),
+    #6d6c6c var(--percent)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.detail__price {
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+}
+.detail__button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.button__addcart {
+  background-color: #0c4591;
+  border-color: transparent;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  color: #fff;
+  width: 80%;
+  padding: 15px;
+  box-shadow: 0 2px 6px #1f4d8a;
+}
+.secure__icons {
+  color: #619744;
+}
+.secure__details {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #0c4591;
+}
+.main__detail__section {
+  width: 80%;
+  margin: auto;
+}
+/* END GAME DETAILS */
+/* MEDIA QUERY*/
+@media screen and (min-width: 768px) {
+  .detail__background {
+    display: block;
+    width: 100%;
+  }
+  .detail__content {
+    width: 90%;
+    padding: 2rem;
+    top: -170px;
+    flex-direction: row;
+  }
+  .detail__images {
+    flex: 0 0 185px;
+  }
+  .detail__details {
+    flex: 0 0 35%;
+  }
+  .detail__title {
+    font-size: 2em;
+  }
+  .detail__sale {
+    flex: 0 0 30%;
+    padding: 10px;
+    gap: 20px;
+  }
+  .detail__images__carousel {
+    flex-direction: row;
+    gap: 3px;
+    position: relative;
+    width: 99%;
+    top: -150px;
+    margin: 0 auto;
+  }
+  .detail__miniImages {
+    height: 110px;
+  }
+  .detail__icons {
+    gap: 25px;
+    font-size: 1.3rem;
+  }
+  .detail__price {
+    font-size: 2rem;
+  }
+  .button__addcart {
+    font-size: 1rem;
+    width: 90%;
+    padding: 10px;
+  }
+  .secure__icons {
+    font-size: 0.8rem;
+  }
+  .secure__details {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .detail__background {
+    max-height: 900px;
+  }
+  .detail__images {
+    flex: 0 0 350px;
+  }
+  .detail__details {
+    flex: 1 0 40%;
+  }
+  .detail__title {
+    font-size: 2.5em;
+  }
+  .detail__description {
+    display: initial;
+  }
+  .detail__sale {
+    gap: 0;
+  }
+  .detail__icons {
+    font-size: 1.5rem;
+  }
+  .detail__price {
+    font-size: 3rem;
+  }
+  .button__addcart {
+    font-size: 1.5rem;
+    width: 60%;
+    padding: 15px;
+  }
+  .detail__images__carousel {
+    width: 90%;
+  }
+  .detail__miniImages {
+    height: 180px;
+  }
+  .secure__icons {
+    font-size: 1rem;
+  }
+  .secure__details {
+    font-size: 1rem;
+  }
+}

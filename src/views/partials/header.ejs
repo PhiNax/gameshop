@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="navbar__logo">
       <a href="/">
-        <img src="/img/gameshop.png" alt="gameshop" tabindex="1" />
+        <img src="/img/areshop.png" alt="areshop logo" tabindex="1" />
       </a>
     </div>
 
@@ -14,32 +14,32 @@
           </a>
         </li>
         <li>
-          <a href="/games/platform/pc" class="nav__categories__links" tabindex="3">
+          <a href="/products/platform/pc" class="nav__categories__links" tabindex="3">
             Pc
           </a>
         </li>
         <li>
-          <a href="/games/platform/ps4" class="nav__categories__links" tabindex="4">
+          <a href="/products/platform/ps4" class="nav__categories__links" tabindex="4">
             PS4
           </a>
         </li>
         <li>
-          <a href="/games/platform/ps5" class="nav__categories__links" tabindex="5">
+          <a href="/products/platform/ps5" class="nav__categories__links" tabindex="5">
             PS5
           </a>
         </li>
         <li>
-          <a href="/games/platform/xbox" class="nav__categories__links" tabindex="6">
+          <a href="/products/platform/xbox" class="nav__categories__links" tabindex="6">
             Xbox
           </a>
         </li>
         <li>
-          <a href="/games/platform/wiiu" class="nav__categories__links" tabindex="7">
+          <a href="/products/platform/wiiu" class="nav__categories__links" tabindex="7">
             Wii U
           </a>
         </li>
         <li>
-          <a href="/games/platform/switch" class="nav__categories__links" tabindex="8">
+          <a href="/products/platform/switch" class="nav__categories__links" tabindex="8">
             Switch
           </a>
         </li>
@@ -47,8 +47,8 @@
     </div>
 
     <div class="search">
-      <form action="/search" method="POST">
-        <input class="search__input" id="search" type="text" placeholder="Search for a game" submit="search"
+      <form action="/products/search/" method="POST">
+        <input type="search" name="search" class="search__input" id="search" placeholder="Search a game" submit="search"
           tabindex="9" />
         <button class="search__button" type="submit" tabindex="10">
           <i class="search-icon fas fa-search"></i>
@@ -57,31 +57,32 @@
     </div>
 
     <ul class="main__nav" id="js-menu">
-      <% if (locals.isLoggedIn) { %>
+      <% if (locals.user) { %>
         <li>
-          <a href="/user/cart" class="nav__links" tabindex="11">
-            <i class="fas fa-shopping-cart"></i>
+          <a href="/user/profile" class="nav__links" tabindex="11">
+            <img class="nav__user__avatar" src="/img/avatars/<%= locals.user.avatar %>" alt="user avatar">
           </a>
         </li>
         <li>
-          <a href="/user/favourites" class="nav__links" tabindex="12">
-            <i class="fas fa-heart"></i>
+          <a class="nav__dropdown__user nav__links" tabindex="12">
+            <%= locals.user.name %>
+              <i class="fas fa-angle-down"></i>
           </a>
         </li>
-        <li>
-          <a href="/user/profile" class="nav__links" tabindex="13">
-            <i class="fas fa-user-circle"></i>
-          </a>
-        </li>
+        <div class="nav__dropdown__content" id="myDropdown">
+          <a class="nav__links" href="/user/profile">Profile</a>
+          <a class="nav__links" href="/user/logout">Logout</a>
+        </div>
+
         <% } else { %>
           <li>
-            <a href="/user/login" class="nav__links" tabindex="11">
-              <i class="far fa-user"><span class="link__span">Login</span></i>
+            <a href="/user/login" class="nav__links main__nav__li" tabindex="11">
+              <i class="far fa-user"></i><span class="link__span">SingIn</span>
             </a>
           </li>
           <li>
-            <a href="/user/register" class="nav__links" tabindex="12">
-              <i class="fas fa-sign-in-alt"><span class="link__span">Register</span></i>
+            <a href="/user/register" class="nav__links main__nav__li" tabindex="12">
+              <i class="fas fa-sign-in-alt"></i><span class="link__span">SingUp</span>
             </a>
           </li>
           <% }%>
@@ -90,12 +91,21 @@
 
   <nav class="navbar__mobile">
     <div class="navM__items">
-      <a class="navM__links" onclick="openNav()">
+      <a id="sidebar__action" class="navM__links">
         <i class="fas fa-bars"></i>
       </a>
-      <a href="/search" class="navM__links" tabindex="11">
+      <a id="searchMobile" class="navM__links" tabindex="11">
         <i class="fas fa-search"></i>
       </a>
+      <div class="navM__search">
+        <form action="/products/search/" method="POST">
+          <input type="search" name="search" class="search__input" id="searchMobile" placeholder="Search a game"
+            submit="search" tabindex="14" />
+          <button class="search__button" type="submit" tabindex="15">
+            <i class="search-icon fas fa-search"></i>
+          </button>
+        </form>
+      </div>
       <a href="/user/login" class="navM__links" tabindex="12">
         <i class="fas fa-user"></i>
       </a>
@@ -105,16 +115,13 @@
     </div>
   </nav>
   <div id="sidebar" class="sidebar">
-    <a class="closebtn" onclick="closeNav()">
-      <i class="far fa-times-circle"></i>
-    </a>
-    <a href="/" class="sidebar__img"><img src="/img/gameshop.png" alt="gameshop" /></a>
+    <a href="/" class="sidebar__img"><img src="/img/areshop.png" alt="areshop logo" /></a>
     <a href="#" class="sidebar__link">Categories</a>
-    <a href="/games/platform/pc" class="sidebar__link">PC</a>
-    <a href="/games/platform/ps4" class="sidebar__link">PS4</a>
-    <a href="/games/platform/ps5" class="sidebar__link">PS5</a>
-    <a href="/games/platform/xbox" class="sidebar__link">XBOX</a>
-    <a href="/games/platform/wiiu" class="sidebar__link">WiiU</a>
-    <a href="/games/platform/switch" class="sidebar__link">SWITCH</a>
+    <a href="/products/platform/pc" class="sidebar__link">PC</a>
+    <a href="/products/platform/ps4" class="sidebar__link">PS4</a>
+    <a href="/products/platform/ps5" class="sidebar__link">PS5</a>
+    <a href="/products/platform/xbox" class="sidebar__link">XBOX</a>
+    <a href="/products/platform/wiiu" class="sidebar__link">WiiU</a>
+    <a href="/products/platform/switch" class="sidebar__link">SWITCH</a>
   </div>
 </header>

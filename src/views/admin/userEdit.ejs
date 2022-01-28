@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head_admin') -%>
+
+    <body>
+        <%- include('../partials/header') -%>
+            <main class="main-form-edit">
+
+                <form action="/admin/user/update/<%= user.id %>?_method=PUT" method="POST" class="form-edit"
+                    enctype="multipart/form-data">
+                    <div class="form-edit-title">USER EDIT</div>
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" name="name" value="<%= user.name%>">
+                    </div>
+                    <div>
+                        <label for="nickname">Nickname</label>
+                        <input type="text" name="nickname" value="<%= user.nickname%>">
+                    </div>
+                    <div>
+                        <label for="userImage">Avatar</label>
+                        <input type="file" name="userImage" accept=".jpg,.png">
+                    </div>
+                    <div>
+                        <label for="access">Access Role</label>
+                        <input type="number" name="access" value="<%= user.access%>">
+                    </div>
+
+                    <div class="form-edit-buttons">
+                        <button type="submit">SAVE</button>
+                        <button type="reset">RESET</button>
+                    </div>
+                </form>
+            </main>
+            <%- include('../partials/footer') -%>
+    </body>
+
+</html>

@@ -1,0 +1,22 @@
+<div class="dashboard__card__item">
+  <div class="dashboard__card__img">
+    <a href="/admin/edit/<%= game.id %>">
+      <img src="/img/products/cover/<%= game.coverImage %>" alt="" />
+    </a>
+  </div>
+  <div class="dashboard__card__content">
+    <div class="dashboard__card__title">
+      <span>
+        <%= game.name %>
+      </span>
+    </div>
+    <div class="dashboard__card__details">
+      <span>
+        <%= game.gamecategory.name %>
+      </span>
+      <span>
+        <%= game.gameplatform.name %>
+      </span>
+    </div>
+  </div>
+</div>

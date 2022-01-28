@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- START Head Content -->
+<%- include('../partials/head') -%>
+
+    <body class="body__index">
+        <!-- START Header Content -->
+        <%- include('../partials/header') -%>
+
+            <!-- START MAIN Content -->
+            <main class="main__index">
+                <!-- START Slider Flickity -->
+                <%- include('../partials/slider') -%>
+                    <!-- START MAIN Content -->
+                    <section class="main__title__wrapper">
+                        <div class="main__title">
+                            <span>
+                                <%= game.gameplatform %> Games
+                            </span>
+                        </div>
+                        <div class="cards__container">
+                            <% game.forEach(function(game){ %>
+                                <%- include('../partials/mainCard', {game}) %>
+                                    <% }); %>
+                        </div>
+                    </section>
+                    <!-- END MAIN Content -->
+                    <!-- START Services Content -->
+                    <%- include('../partials/services-section') -%>
+            </main>
+            <!-- START Footer Content -->
+            <%- include('../partials/footer') -%>
+    </body>
+
+</html>

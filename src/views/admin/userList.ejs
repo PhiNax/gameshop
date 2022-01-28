@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head_admin') -%>
+
+    <body>
+        <%- include('../partials/header') -%>
+            <main class="main__dashboard">
+                <div class="navbar-products">
+                    <div>
+                        <form action="/admin/user/search/" method="post">
+                            <input type="search" name="search" placeholder="Search games" /><button
+                                type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div>
+                        <a href="/admin/user/create"><button>Create New User</button></a>
+                    </div>
+                    <div>
+                        <a href="/admin/user/"><button>Users List</button></a>
+                    </div>
+                </div>
+
+                <div class="dashboard__card__container">
+                    <table>
+                        <thead>
+                            <th>Name</th>
+                            <th>Nickname</th>
+                            <th>Avatar</th>
+                            <th>Role</th>
+                        </thead>
+                        <tbody>
+                            <% user.forEach(function(user){ %>
+                                <tr>
+                                    <th>
+                                        <a href="/admin/user/<%= user.id %>">
+                                            <%= user.name %>
+                                        </a>
+                                    </th>
+                                    <th>
+                                        <%= user.nickname %>
+                                    </th>
+                                    <th>
+                                        <img src="/img/avatars/<%= user.avatar %>" alt="">
+                                    </th>
+                                    <th>
+                                        <%= user.access %>
+                                    </th>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+
+                </div>
+            </main>
+            <%- include('../partials/footer') -%>
+    </body>
+
+</html>

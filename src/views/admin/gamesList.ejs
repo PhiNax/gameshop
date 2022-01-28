@@ -1,11 +1,32 @@
-<section class="dash__content">
-  <div>
-    <span class="title"><%= games[0].platform %> Games</span>
-  </div>
-  <!-- prettier-ignore -->
-  <div class="games__cards__wrapper">
-  <% games.forEach(function(games){ %>
-  <%- include('../admin/gamesCard', {games}) %>
-  <% }); %>
-</div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head_admin') -%>
+
+  <body>
+    <%- include('../partials/header') -%>
+      <main class="main__dashboard">
+        <div class="navbar-products">
+          <div>
+            <form action="/admin/search/" method="post">
+              <input type="search" name="search" placeholder="Search games" /><button type="submit">Search</button>
+            </form>
+          </div>
+          <div>
+            <a href="/admin/create"><button>Create New Product</button></a>
+          </div>
+          <div>
+            <a href="/admin/"><button>Products List</button></a>
+          </div>
+        </div>
+
+        <div class="dashboard__card__container">
+          <% game.forEach(function(game){ %>
+            <%- include('./gameCard', {game}) %>
+              <% }); %>
+        </div>
+      </main>
+      <%- include('../partials/footer') -%>
+  </body>
+
+</html>

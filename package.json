@@ -1,37 +1,37 @@
 {
-  "name": "gameshop",
-  "version": "1.1.2",
-  "description": "Ecommerce de consolas y video juegos",
-  "main": "app.js",
+  "name": "areshsop",
+  "version": "2.0.0",
+  "description": "Ecommerce de video juegos digitales",
+  "main": "src/app.js",
   "scripts": {
-    "startmon": "nodemon ./src/app.js",
-    "start": "node ./src/app.js"
+    "start": "nodemon ./src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "DEV": "nodemon ./src/app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PhiNax/gameshop.git"
+    "url": "git+https://github.com/PhiNax/areshop_Grupo-2.git"
   },
-  "author": "PhiNax",
-  "license": "ISC",
+  "author": "group2",
+  "license": "gpl-3.0",
   "bugs": {
-    "url": "https://github.com/PhiNax/gameshop.git/issues"
+    "url": "https://github.com/PhiNax/areshop_Grupo-2/issues"
   },
-  "homepage": "https://github.com/PhiNax/gameshop.git#readme",
+  "homepage": "https://github.com/PhiNax/areshop_Grupo-2#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "cookie-parser": "^1.4.5",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "express-validator": "^6.12.2",
+    "express-validator": "^6.13.0",
     "fs": "^0.0.1-security",
     "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
     "multer": "^1.4.3",
-    "mysql2": "^2.3.0",
-    "nodemon": "^2.0.13",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
     "path": "^0.12.7",
-    "sequelize": "^6.9.0",
-    "uuidv4": "^6.2.12"
+    "sequelize": "^6.11.0"
   }
 }

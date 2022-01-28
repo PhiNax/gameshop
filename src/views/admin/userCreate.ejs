@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head_admin') -%>
+
+    <body>
+        <%- include('../partials/header') -%>
+            <main class="main-form-create">
+
+                <form action="/admin/user/store" method="POST" class="form-create" enctype="multipart/form-data">
+                    <div class="form-create-title">CREATE A NEW USER</div>
+                    <div>
+                        <label for="name">First Name</label>
+                        <input type="text" name="name" />
+                    </div>
+                    <div>
+                        <label for="nickname">Nickname</label>
+                        <input type="text" name="nickname" />
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" />
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" />
+                    </div>
+                    <div>
+                        <label for="userImage">Avatar</label>
+                        <input type="file" name="userImage" />
+                    </div>
+                    <div>
+
+                        <div class="create-form-buttons">
+                            <button type="submit" value="submit">CREATE</button>
+                            <button type="reset" value="reset">RESET</button>
+                        </div>
+                </form>
+            </main>
+            <%- include('../partials/footer') -%>
+    </body>
+
+</html>

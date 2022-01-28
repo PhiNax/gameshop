@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- START Head Content -->
+<%- include('../partials/head', { data: 'details' } ) -%>
+
+  <body class="body__game__details">
+    <!-- START Header Content -->
+    <%- include('../partials/header') -%>
+      <!-- START MAIN Content -->
+      <main class="main__game__details">
+        <div class="detail__background">
+          <img src="<%= game.gamescreenshots[0].name %>" alt="" />
+        </div>
+        <div class="detail__content">
+          <div class="detail__images">
+            <img src="/img/products/cover/<%= game.coverImage %>" alt="" class="detail__img" />
+          </div>
+          <div class="detail__details">
+
+            <div class="detail__title">
+              <%= game.name %>
+            </div>
+
+            <div class="detail__platform">
+              Platform:
+              <span class="bold italic">
+                <%= game.gameplatform.name %>
+              </span>
+            </div>
+            <div class="detail__category">
+              Category:
+              <span class="bold italic">
+                <%= game.gamecategory.name %>
+              </span>
+            </div>
+
+            <div class="detail__description">
+              <%= game.description %>
+            </div>
+          </div>
+          <div class="detail__sale">
+            <div class="detail__icons">
+              <div>
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="share__icon">
+                <i class="fas fa-share-alt"></i>
+              </div>
+              <div class="favourite__icon">
+                <i class="far fa-heart"></i>
+              </div>
+            </div>
+            <div class="detail__rating">
+              <div>Users Rating:</div>
+              <div class="stars__rating" style="--rating: <%= game.rating %>;"></div>
+            </div>
+            <div class="detail__price">
+              <div>$<%= game.price %>
+              </div>
+            </div>
+            <div class="detail__button">
+              <button class="button__addcart" type="submit">Add to Cart</button>
+            </div>
+            <div class="secure__icons"><i class="fas fa-lock"></i> Your transaction is secure</div>
+            <div><a class="secure__details" href="#">See our secure transaction details</a></div>
+          </div>
+        </div>
+
+        <div class="detail__images__carousel">
+          <% game.gamescreenshots.forEach(function(element){ %>
+            <a data-fancybox="gallery" data-src="<%= element.name %>" data-caption="<%= game.name %>">
+              <img src="<%= element.name %>" alt="<%= game.name %>" class="detail__miniImages" />
+            </a>
+            <% }); %>
+        </div>
+
+      </main>
+      <!-- START Footer Content -->
+      <%- include('../partials/footer') -%>
+        <!-- Script Fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  </body>
+
+</html>

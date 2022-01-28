@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head_admin') -%>
+
+  <body>
+    <%- include('../partials/header') -%>
+      <main class="main-form-create">
+
+        <div class="producterrors">
+          <ul>
+          </ul>
+        </div>
+        <form action="/admin/store" method="POST" class="form-create" enctype="multipart/form-data">
+          <div class="form-create-title">CREATE A NEW GAME</div>
+          <div>
+            <label for="name" class="productName">Name:</label>
+            <input type="text" name="name" />
+          </div>
+          <div>
+            <label for="description" class="productDescription">Description:</label>
+            <input type="text" name="description" />
+          </div>
+          <div>
+            <label for="coverImage" class="coverImage">Cover Image:</label>
+            <input type="file" name="coverImage" />
+          </div>
+          <div>
+            <label for="rating">Rating:</label>
+            <input type="numer" name="rating" />
+          </div>
+          <div>
+            <label for="price">Price:</label>
+            <input type="text" name="price" />
+          </div>
+          <div class="category">
+            <input type="radio" name="category" id="action" value="1" />
+            <label for="action">Action</label>
+            <input type="radio" name="category" id="adventure" value="2" />
+            <label for="adventure">Adventure</label>
+            <input type="radio" name="category" id="rpg" value="3" />
+            <label for="rpg">RPG</label>
+            <input type="radio" name="category" id="strategy" value="4" />
+            <label for="strategy">Strategy</label>
+            <input type="radio" name="category" id="shooter" value="5" />
+            <label for="shooter">Shooter</label>
+            <input type="radio" name="category" id="simulation" value="6" />
+            <label for="simulation">Simulation</label>
+            <input type="radio" name="category" id="arcade" value="7" />
+            <label for="arcade">Arcade</label>
+            <input type="radio" name="category" id="platformer" value="8" />
+            <label for="platformer">Platformer</label>
+            <input type="radio" name="category" id="racing" value="9" />
+            <label for="racing">Racing</label>
+            <input type="radio" name="category" id="mmo" value="10" />
+            <label for="mmo">MMO</label>
+            <input type="radio" name="category" id="sport" value="11" />
+            <label for="sport">Sport</label>
+            <input type="radio" name="category" id="fighting" value="12" />
+            <label for="fighting">Fighting</label>
+          </div>
+
+          <div class="platform">
+            <input type="radio" name="platform" id="pc" value="1" />
+            <label for="pc">PC</label>
+            <input type="radio" name="platform" id="ps4" value="2" />
+            <label for="ps4">PS4</label>
+            <input type="radio" name="platform" id="ps5" value="3" />
+            <label for="ps5">PS5</label>
+            <input type="radio" name="platform" id="xbox" value="4" />
+            <label for="xbox">XBOX</label>
+            <input type="radio" name="platform" id="wiiu" value="5" />
+            <label for="wiiu">WIIU</label>
+            <input type="radio" name="platform" id="switch" value="6" />
+            <label for="switch">SWITCH</label>
+          </div>
+
+          <div class="create-form-buttons">
+            <button type="submit" value="submit">CREATE</button>
+            <button type="reset" value="reset">RESET</button>
+          </div>
+        </form>
+
+      </main>
+      <%- include('../partials/footer') -%>
+        <script src="/js/products.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,14 @@
+/* Color palette */
+:root {
+  --red: #e30428;
+  --darkblue: #1d252c;
+  --grey: #82869a;
+  --lightgrey: #e5e5e5;
+  --white: #e5e5e5;
+  --black: #000;
+  --fontcolor: #262626;
+  --lightblue: #e30428;
+  --darkblue: #1d252c;
+  --lightviolet: #a69cf1;
+  --strongviolet: rgb(219, 34, 42);
+}

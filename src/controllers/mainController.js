@@ -1,47 +1,36 @@
-const { Game } = require('../database/connectDB');
+// Call Games DataBase Table (MySQL)
+const { Game, GameCategory, GamePlatform } = require('../database/connectDB');
 
-// Create Main Controller
 const controller = {
-    // Index
+    // Index Show all games
     index: async (req, res) => {
+        try {
+            const gamePc = await Game.findAll({
+                include: [GameCategory, GamePlatform],
+                where: {
+                    gameplatformId: 1
+                }
+            });
 
-        const gamesPc = await Game.findAll({
-            where: {
-                platform_slug: 'pc',
-            }
-        });
-        const gamesPs4 = await Game.findAll({
-            where: {
-                platform_slug: 'ps4',
-            }
-        });
-        const gamesPs5 = await Game.findAll({
-            where: {
-                platform_slug: 'ps5',
-            }
-        });
-        const gamesXbox = await Game.findAll({
-            where: {
-                platform_slug: 'xbox',
-            }
-        });
-        const gamesWiiu = await Game.findAll({
-            where: {
-                platform_slug: 'wiiu',
-            }
-        });
-        const gamesSwitch = await Game.findAll({
-            where: {
-                platform_slug: 'switch',
-            }
-        });
+            const gamePs4 = await Game.findAll({
+                include: [GameCategory, GamePlatform],
+                where: {
+                    gameplatformId: 2
+                }
+            });
 
-        res.render('index', { gamesPc, gamesPs4, gamesPs5, gamesXbox, gamesWiiu, gamesSwitch });
-    },
+            const gamePs5 = await Game.findAll({
+                include: [GameCategory, GamePlatform],
+                where: {
+                    gameplatformId: 3
+                }
+            });
 
-    // Detail from one product
-    detail: (req, res) => {
-        res.render('productdetails');
+            res.render('index', { gamePc, gamePs4, gamePs5, user: req.session.userLogged } );
+        }
+        catch (err) {
+            throw new Error('List games for index: failed => ' + err);
+        }
     }
 };
 

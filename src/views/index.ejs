@@ -6,99 +6,96 @@
   <body class="body__index">
     <!-- START Header Content -->
     <%- include('partials/header') -%>
-      <!-- START Slider Flickity -->
-      <%- include('partials/slider') -%>
-        <!-- START MAIN Content -->
-        <main class="main__index">
-          <section class="gameList__wrapper">
-            <div class="gameList__title">
-              <span class="gameList__span__title">
-                <%= gamesPc[0].platform %> Games
+
+      <!-- START MAIN Content -->
+      <main class="main__index">
+        <!-- START Slider Flickity -->
+        <%- include('partials/slider') -%>
+
+          <section class="main__title__wrapper">
+            <div class="main__title">
+              <span>
+                Pc Games
               </span>
             </div>
-
             <div class="cards__container">
-              <% gamesPc.forEach(function(games){ %>
-                <%- include('partials/mainCard', {games}) %>
+              <% gamePc.forEach(function(game){ %>
+                <%- include('partials/mainCard', {game}) %>
                   <% }); %>
             </div>
           </section>
 
-          <section class="gameList__wrapper">
-            <div class="gameList__title">
-              <span class="gameList__span__title">
-                <%= gamesPs4[0].platform %> Games
+          <section class="main__title__wrapper">
+            <div class="main__title">
+              <span>
+                PS4 Games
               </span>
             </div>
-
             <div class="cards__container">
-              <% gamesPs4.forEach(function(games){ %>
-                <%- include('partials/mainCard', {games}) %>
+              <% gamePs4.forEach(function(game){ %>
+                <%- include('partials/mainCard', {game}) %>
                   <% }); %>
             </div>
           </section>
 
-          <section class="gameList__wrapper">
-            <div class="gameList__title">
-              <span class="gameList__span__title">
-                <%= gamesPs5[0].platform %> Games
+          <section class="main__title__wrapper">
+            <div class="main__title">
+              <span>
+                PS5 Games
               </span>
             </div>
-
             <div class="cards__container">
-              <% gamesPs5.forEach(function(games){ %>
-                <%- include('partials/mainCard', {games}) %>
+              <% gamePs5.forEach(function(game){ %>
+                <%- include('partials/mainCard', {game}) %>
                   <% }); %>
             </div>
           </section>
 
-          <section class="gameList__wrapper">
-            <div class="gameList__title">
-              <span class="gameList__span__title">
-                <%= gamesXbox[0].platform %> Games
+          <section class="main__title__wrapper">
+            <div class="main__title">
+              <span>
+                Xbox Games
               </span>
             </div>
-
             <div class="cards__container">
-              <% gamesXbox.forEach(function(games){ %>
-                <%- include('partials/mainCard', {games}) %>
+              <% gamePc.forEach(function(game){ %>
+                <%- include('partials/mainCard', {game}) %>
                   <% }); %>
             </div>
           </section>
 
-          <section class="gameList__wrapper">
-            <div class="gameList__title">
-              <span class="gameList__span__title">
-                <%= gamesWiiu.platform %> Games
+          <section class="main__title__wrapper">
+            <div class="main__title">
+              <span>
+                Wii U Games
               </span>
             </div>
-
             <div class="cards__container">
-              <% gamesWiiu.forEach(function(games){ %>
-                <%- include('partials/mainCard', {games}) %>
+              <% gamePc.forEach(function(game){ %>
+                <%- include('partials/mainCard', {game}) %>
                   <% }); %>
             </div>
           </section>
 
-          <section class="gameList__wrapper">
-            <div class="gameList__title">
-              <span class="gameList__span__title">
-                <%= gamesSwitch.platform %> Games
+          <section class="main__title__wrapper">
+            <div class="main__title">
+              <span>
+                Switch Games
               </span>
             </div>
-
             <div class="cards__container">
-              <% gamesSwitch.forEach(function(games){ %>
-                <%- include('partials/mainCard', {games}) %>
+              <% gamePc.forEach(function(game){ %>
+                <%- include('partials/mainCard', {game}) %>
                   <% }); %>
             </div>
           </section>
+
           <!-- ENDS MAIN Content -->
           <!-- START Services Content -->
           <%- include('partials/services-section') -%>
-        </main>
-        <!-- START Footer Content -->
-        <%- include('partials/footer') -%>
+      </main>
+      <!-- START Footer Content -->
+      <%- include('partials/footer') -%>
   </body>
 
 </html>

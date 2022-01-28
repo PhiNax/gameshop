@@ -14,21 +14,47 @@ try {
     console.log('Connection has been established successfully.');
 }
 catch (err) {
-    throw new Error('Unable to connect to the database:', err);
+    throw new Error('Unable to connect to the database: Error => ', err);
 };
 
 // User Schema    
-const UserSchema = require('../models/usersSchema');
-const User = UserSchema(sequelize, Sequelize, DataTypes);
+const UserSchema = require('../models/userSchema');
+const User = UserSchema(sequelize, DataTypes);
 
 // Game Schema 
-const GameSchema = require('../models/gamesSchema');
-const Game = GameSchema(sequelize, Sequelize, DataTypes);
+const GameSchema = require('../models/gameSchema');
+const Game = GameSchema(sequelize, DataTypes);
+// Game Category Schema
+const GameCategorySchema = require('../models/gameCategorySchema');
+const GameCategory = GameCategorySchema(sequelize, DataTypes);
+// Game Platform Schema
+const GamePlatformSchema = require('../models/GamePlatformSchema');
+const GamePlatform = GamePlatformSchema(sequelize, DataTypes);
+// Game Screenshot Schema
+const GameScreenshotSchema = require('../models/GameScreenshotSchema');
+const GameScreenshot = GameScreenshotSchema(sequelize, DataTypes);
+
+// Relationship Schema
+// Games have one Category and Category have multiple games
+GameCategory.hasMany(Game);
+Game.belongsTo(GameCategory);
+
+// Games have one Platform and Platform have multiple games
+GamePlatform.hasMany(Game);
+Game.belongsTo(GamePlatform);
+
+// Games have multiple Screenshots and Screenshots have only one games
+Game.hasMany(GameScreenshot);
+GameScreenshot.belongsTo(Game);
 
 // Synchornize only for create new tables
-/*
-sequelize.sync({ force: false })
-    .then(() => { console.log('Tables Users and Games synchronized to dababase'); })
-    .catch(error => { conso.log(error); });
-*/
-module.exports = { User, Game }
+try {
+    sequelize.sync();
+    console.log('Tables synchronized to dababase');
+}
+catch (err) {
+    throw new Error('Unable to sync tables: Error => ', err);
+}
+
+
+module.exports = { User, Game, GameCategory, GamePlatform, GameScreenshot }

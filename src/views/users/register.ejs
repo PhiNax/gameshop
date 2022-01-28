@@ -5,18 +5,24 @@
 
   <body>
     <%- include('../partials/header') -%>
+
       <main class="main__register">
-        <div class="card__register">
-          <div class="form__title"><span>Create your Account</span>
-          </div>
-          <% if (locals.errors) { %>
-            <% for( let error in errors ) { %>
-              <span class="form__errors"><i class="fas fa-exclamation-triangle form__alert"></i>
-                <%= errors[error].msg %>
-              </span>
+        <div class="erroresRegister">
+          <ul>
+          </ul>
+        </div>
+        <% if (locals.errors) { %>
+          <% for( let error in errors ) { %>
+            <span class="form__errors"><i class="fas fa-exclamation-triangle form__alert"></i>
+              <%= errors[error].msg %>
+            </span>
+            <% } %>
               <% } %>
-                <% } %>
-                  <form class="form__register" action="/user/register" method="POST">
+                <div class="card__register">
+                  <div class="form__title"><span>Create your Account</span>
+                  </div>
+
+                  <form class="form__register" action="/user/register" method="POST" enctype="multipart/form-data">
                     <div class="firstname">
                       <label for="firstName">First Name</label>
                       <input type="text" name="firstName" tabindex="13" value="<%= locals.old && old.firstName %>"
@@ -34,26 +40,23 @@
                       <label for="password">Password</label>
                       <input type="password" name="password" tabindex="16" />
                     </div>
-                    <div class="passwordC">
-                      <label for="passwordC">Repeat Password</label>
-                      <input type="password" name="passwordC" tabindex="17 " />
-                    </div>
                     <div class="form__terms">
-                      <input type="checkbox" id="terms" name="terms" value="accept" tabindex="18" />
+                      <input type="checkbox" id="terms" name="terms" value="accept" tabindex="17" />
                       <label for="terms">I agree with the terms and conditions</label>
                     </div>
 
-                    <button type="submit" class="button__register" tabindex="19">
+                    <button type="submit" class="button__register" tabindex="18">
                       Register
                     </button>
                   </form>
                   <div class="form__gologin">
                     <span>Already Registered?</span>
-                    <a href="/user/login" tabindex="20">Login</a>
+                    <a href="/user/login" tabindex="19">Login</a>
                   </div>
-        </div>
+                </div>
       </main>
       <%- include('../partials/footer') -%>
+        <script src="/js/register.js"></script>
   </body>
 
 </html>
