@@ -1,101 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- START Head Content -->
-<%- include('partials/head') -%>
+    <!-- START Head Content -->
+    <%- include('partials/head') -%>
 
-  <body class="body__index">
-    <!-- START Header Content -->
-    <%- include('partials/header') -%>
+    <body class="body__index">
+        <!-- START Header Content -->
+        <%- include('partials/header') -%>
 
-      <!-- START MAIN Content -->
-      <main class="main__index">
-        <!-- START Slider Flickity -->
-        <%- include('partials/slider') -%>
+        <!-- START MAIN Content -->
+        <main class="main__index">
+            <!-- START Slider Flickity -->
+            <%- include('partials/slider') -%>
 
-          <section class="main__title__wrapper">
-            <div class="main__title">
-              <span>
-                Pc Games
-              </span>
-            </div>
-            <div class="cards__container">
-              <% gamePc.forEach(function(game){ %>
-                <%- include('partials/mainCard', {game}) %>
-                  <% }); %>
-            </div>
-          </section>
+            <section class="main__title__wrapper">
+                <div class="main__title">
+                    <span> Pc Games </span>
+                </div>
+                <div class="cards__container">
+                    <% gamePc.forEach(function(game){ %> <%-
+                    include('partials/mainCard', {game}) %> <% }); %>
+                </div>
+            </section>
 
-          <section class="main__title__wrapper">
-            <div class="main__title">
-              <span>
-                PS4 Games
-              </span>
-            </div>
-            <div class="cards__container">
-              <% gamePs4.forEach(function(game){ %>
-                <%- include('partials/mainCard', {game}) %>
-                  <% }); %>
-            </div>
-          </section>
+            <section class="main__title__wrapper">
+                <div class="main__title">
+                    <span> PS4 Games </span>
+                </div>
+                <div class="cards__container">
+                    <% gamePs4.forEach(function(game){ %> <%-
+                    include('partials/mainCard', {game}) %> <% }); %>
+                </div>
+            </section>
 
-          <section class="main__title__wrapper">
-            <div class="main__title">
-              <span>
-                PS5 Games
-              </span>
-            </div>
-            <div class="cards__container">
-              <% gamePs5.forEach(function(game){ %>
-                <%- include('partials/mainCard', {game}) %>
-                  <% }); %>
-            </div>
-          </section>
+            <section class="main__title__wrapper">
+                <div class="main__title">
+                    <span> PS5 Games </span>
+                </div>
+                <div class="cards__container">
+                    <% gamePs5.forEach(function(game){ %> <%-
+                    include('partials/mainCard', {game}) %> <% }); %>
+                </div>
+            </section>
 
-          <section class="main__title__wrapper">
-            <div class="main__title">
-              <span>
-                Xbox Games
-              </span>
-            </div>
-            <div class="cards__container">
-              <% gamePc.forEach(function(game){ %>
-                <%- include('partials/mainCard', {game}) %>
-                  <% }); %>
-            </div>
-          </section>
+            <section class="main__title__wrapper">
+                <div class="main__title">
+                    <span> Xbox Games </span>
+                </div>
+                <div class="cards__container">
+                    <% gamePc.forEach(function(game){ %> <%-
+                    include('partials/mainCard', {game}) %> <% }); %>
+                </div>
+            </section>
 
-          <section class="main__title__wrapper">
-            <div class="main__title">
-              <span>
-                Wii U Games
-              </span>
-            </div>
-            <div class="cards__container">
-              <% gamePc.forEach(function(game){ %>
-                <%- include('partials/mainCard', {game}) %>
-                  <% }); %>
-            </div>
-          </section>
+            <section class="main__title__wrapper">
+                <div class="main__title">
+                    <span> Wii U Games </span>
+                </div>
+                <div class="cards__container">
+                    <% gamePc.forEach(function(game){ %> <%-
+                    include('partials/mainCard', {game}) %> <% }); %>
+                </div>
+            </section>
 
-          <section class="main__title__wrapper">
-            <div class="main__title">
-              <span>
-                Switch Games
-              </span>
-            </div>
-            <div class="cards__container">
-              <% gamePc.forEach(function(game){ %>
-                <%- include('partials/mainCard', {game}) %>
-                  <% }); %>
-            </div>
-          </section>
+            <section class="main__title__wrapper">
+                <div class="main__title">
+                    <span> Switch Games </span>
+                </div>
+                <div class="cards__container">
+                    <% gamePc.forEach(function(game){ %> <%-
+                    include('partials/mainCard', {game}) %> <% }); %>
+                </div>
+            </section>
 
-          <!-- ENDS MAIN Content -->
-          <!-- START Services Content -->
-          <%- include('partials/services-section') -%>
-      </main>
-      <!-- START Footer Content -->
-      <%- include('partials/footer') -%>
-  </body>
-
+            <!-- ENDS MAIN Content -->
+            <!-- START Services Content -->
+            <%- include('partials/services-section') -%>
+        </main>
+        <!-- START Footer Content -->
+        <%- include('partials/footer') -%>
+    </body>
 </html>
