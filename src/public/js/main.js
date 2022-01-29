@@ -10,10 +10,10 @@ window.onload = () => {
 
     // Search Button from Mobile Navbar
     let searchMobile = document.getElementById('searchMobile');
-    let searchMobileMenu = document.querySelector('.navM__search')
+    let searchMobileMenu = document.querySelector('.navM__search');
 
     searchMobile.addEventListener('click', () => {
-        searchMobileMenu.classList.toggle('navM_search_show')
+        searchMobileMenu.classList.toggle('navM__search__show');
     })
 
     // SideBar Mobile Menu

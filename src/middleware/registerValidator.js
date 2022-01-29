@@ -19,7 +19,7 @@ const validateRegister = [
                 }
             });
             if (nicknameUsed) {
-                throw new Error('Choose another nickname');
+                throw new Error('Nickname not available');
             }
 
             return true;
@@ -44,7 +44,17 @@ const validateRegister = [
 
     check('password')
         .notEmpty().withMessage('Complete your password')
-        .isLength({ min: 8 }).withMessage('Your password must have at least 8 characters'),
+        .isLength({ min: 8 }).withMessage('Password must have at least 8 characters'),
+
+    check('passwordC')
+        .notEmpty().withMessage('Complete your confirmation password')
+        .isLength({ min: 8 }).withMessage('Password must have at least 8 characters')
+        .custom((value, { req }) => {
+            if (value !== req.body.password) {
+                throw new Error('Password do not match');
+            }
+            return true;
+        }),
 ]
 
 module.exports = validateRegister;

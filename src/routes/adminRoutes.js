@@ -8,7 +8,7 @@ const adminController = require('../controllers/adminController');
 const uploadCoverImage = require('../middleware/multerGameImage');
 
 // Call multer middleware to upload users images avatars
-const uploadAvatar = require('../middleware/multer');
+const uploadAvatar = require('../middleware/avatarMulter');
 
 const adminMiddleware = require('../middleware/adminMiddleware');
 
@@ -38,10 +38,10 @@ router.get('/user/', adminMiddleware, adminController.userList);
 // User Create
 router.get('/user/create', adminMiddleware, adminController.userCreate);
 // User => Store New User Route
-router.post('/user/store', adminMiddleware, uploadAvatar.single("coverImage"), adminController.userStore);
+router.post('/user/store', adminMiddleware, uploadAvatar.single("avatarImage"), adminController.userStore);
 // User Edit
 router.get('/user/:id', adminMiddleware, adminController.userGetEdit);
 // User Update
-router.put('/user/update/:id', adminMiddleware, uploadAvatar.single("coverImage"), adminController.userUpdate)
+router.put('/user/update/:id', adminMiddleware, uploadAvatar.single("avatarImage"), adminController.userUpdate)
 
 module.exports = router;

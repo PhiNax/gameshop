@@ -54,7 +54,7 @@ app.use(methodOverride('_method')); // method="POST" on form to use PUT y DELETE
 // Set app to use express session
 app.use(session({
     secret: 'A la grande le puse cuca',
-    name: 'areshop-sid',
+    name: 'gameshop-sid',
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 600000 }

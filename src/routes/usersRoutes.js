@@ -13,7 +13,7 @@ const guestMiddleware = require('../middleware/guestMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
 
 // Call multer middleware to upload user avatar image
-const uploadAvatar = require('../middleware/multer');
+const uploadAvatar = require('../middleware/avatarMulter');
 
 // Register Route
 router.get('/register', guestMiddleware, usersController.register);
