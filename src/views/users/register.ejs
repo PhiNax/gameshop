@@ -25,17 +25,17 @@
                     enctype="multipart/form-data"
                 >
                     <div class="firstname">
-                        <label for="firstName">First Name</label>
+                        <label for="firstname">First Name</label>
                         <input
                             type="text"
-                            name="firstName"
+                            name="firstname"
                             tabindex="13"
                             value="<%= locals.old && old.firstName %>"
                             autofocus
                         />
                     </div>
                     <div class="lastname">
-                        <label for="nickme">Last Name</label>
+                        <label for="lastname">Last Name</label>
                         <input
                             type="text"
                             name="lastname"
@@ -58,7 +58,7 @@
                     </div>
                     <div class="passwordC">
                         <label for="passwordC">Repeat Password</label>
-                        <input type="passwordC" name="password" tabindex="17" />
+                        <input type="password" name="passwordC" tabindex="17" />
                     </div>
                     <div class="form__terms">
                         <input
@@ -68,7 +68,7 @@
                             value="accept"
                             tabindex="18"
                         />
-                        <label for="terms" tabindex="19">
+                        <label for="terms">
                             I agree with the terms and conditions
                         </label>
                     </div>
@@ -76,14 +76,14 @@
                     <button
                         type="submit"
                         class="button__register"
-                        tabindex="20"
+                        tabindex="19"
                     >
                         Register
                     </button>
                 </form>
                 <div class="form__gologin">
                     <span>Already Registered?</span>
-                    <a href="/user/login" tabindex="21">Login</a>
+                    <a href="/user/login" tabindex="20">Login</a>
                 </div>
             </div>
         </main>

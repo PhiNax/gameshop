@@ -23,8 +23,8 @@ const controller = {
             let passCrypt = await bcrypt.hash(req.body.password, 10);
 
             let newUser = {
-                name: req.body.name,
-                nickname: req.body.nickname,
+                firstname: req.body.firstname,
+                lastname: req.body.lastname,
                 email: req.body.email,
                 password: passCrypt,
             }
