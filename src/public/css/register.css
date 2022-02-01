@@ -1,158 +1,129 @@
 .main__register {
-  width: 100%;
-  margin: 50px auto;
-  margin-bottom: 100px;
+    width: 100%;
+    margin: 50px auto;
+    margin-bottom: 100px;
 }
 .card__register {
-  width: 80%;
-  height: auto;
-  border-top: 2px solid #09346c;
-  background-color: #fff;
-  border-radius: 10px;
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 30px;
-  padding: 20px;
-  box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%),
-    0 0.9375rem 1.40625rem rgb(90 97 105 / 10%),
-    0 0.25rem 0.53125rem rgb(90 97 105 / 12%),
-    0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
+    width: 80%;
+    height: auto;
+    border-top: 2px solid #09346c;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0 0.46875rem 2.1875rem rgb(90 97 105 / 10%),
+        0 0.9375rem 1.40625rem rgb(90 97 105 / 10%),
+        0 0.25rem 0.53125rem rgb(90 97 105 / 12%),
+        0 0.125rem 0.1875rem rgb(90 97 105 / 10%);
 }
 .form__register {
-  display: flex;
-  flex-flow: row wrap;
+    display: flex;
+    flex-flow: row wrap;
 }
 .form__title {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
 }
 .form__errors {
-  display: block;
-  color: #842029;
-  background-color: #f8d7da;
-  border-color: #f5c2c7;
-  position: relative;
-  padding: 1rem 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid transparent;
-  border-radius: 7px;
-  overflow: hidden;
-  animation: zoom-in 0.5s forwards;
+    display: block;
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    overflow: hidden;
+    animation: zoom-in 0.5s forwards;
 }
 .form__alert {
-  color: #cc091a;
+    color: #cc091a;
 }
 .form__register input {
-  display: block;
-  box-sizing: border-box;
-  padding: 0.5rem;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 10px;
+    display: block;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
 }
 .form__register label {
-  padding: 0.5rem;
-  font-weight: bold;
+    padding: 0.5rem;
+    font-weight: bold;
 }
-.firstname {
-  width: 100%;
-  margin-top: 8px;
+.form__register div {
+    width: 100%;
+    margin-top: 8px;
 }
-.firstname input {
-  width: 100%;
-  margin-top: 5px;
-}
-.lastname {
-  width: 100%;
-  margin-top: 8px;
-}
-.lastname input {
-  width: 100%;
-  margin-top: 5px;
-}
-.email {
-  width: 100%;
-  margin-top: 8px;
-}
-.email input {
-  width: 100%;
-  margin-top: 5px;
-}
-.password {
-  width: 100%;
-  margin-top: 8px;
-}
-.password input {
-  width: 100%;
-  margin-top: 5px;
-}
-.passwordC {
-  width: 100%;
-  margin-top: 8px;
-}
-.passwordC input {
-  width: 100%;
-  margin-top: 5px;
+.form__register input {
+    width: 100%;
+    margin-top: 5px;
 }
 .form__terms {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 1rem;
+}
+.form__terms input {
+    width: 15px;
 }
 .button__register {
-  background-color: #0c4591;
-  border-color: transparent;
-  border-radius: 10px;
-  font-size: 1.3rem;
-  color: #fff;
-  width: 100%;
-  padding: 15px;
-  box-shadow: 0 2px 6px #1f4d8a;
+    background-color: #0c4591;
+    border-color: transparent;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    box-shadow: 0 2px 6px #1f4d8a;
 }
 .form__gologin {
-  padding: 30px 0 5px 15px;
-  display: flex;
-  justify-content: center;
+    padding: 30px 0 5px 15px;
+    display: flex;
+    justify-content: center;
 }
 .form__gologin a {
-  padding-left: 5px;
-  text-decoration: none;
-  color: #0c4591;
+    padding-left: 5px;
+    text-decoration: none;
+    color: #0c4591;
 }
 
 /* MEDIA QUERY*/
 @media screen and (max-width: 367px) {
-  .form__terms {
-    font-size: 0.8rem;
-  }
+    .form__terms {
+        font-size: 0.8rem;
+    }
 }
 @media screen and (min-width: 768px) {
-  .card__register {
-    width: 50%;
-  }
+    .card__register {
+        width: 50%;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-  .card__register {
-    width: 20%;
-  }
+    .card__register {
+        width: 20%;
+    }
 }
 
 @keyframes zoom-in {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

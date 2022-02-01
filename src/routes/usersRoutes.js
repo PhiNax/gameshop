@@ -18,7 +18,7 @@ const uploadAvatar = require('../middleware/avatarMulter');
 // Register Route
 router.get('/register', guestMiddleware, usersController.register);
 
-router.post('/createuser', uploadAvatar.single('userimage'), validateRegister, usersController.createUser);
+router.post('/createuser', uploadAvatar.single('avatar'), validateRegister, usersController.createUser);
 
 // Login Route
 router.get('/login', guestMiddleware, usersController.login);
