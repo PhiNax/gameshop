@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') -%>
+    <%- include('../partials/head', {data: 'register'}) -%>
 
     <body>
         <%- include('../partials/header') -%>
 
         <main class="main__register">
-            <div class="erroresRegister">
+            <div class="errors">
                 <ul></ul>
             </div>
             <% if (locals.errors) { %> <% for( let error in errors ) { %>
-            <span class="form__errors"
-                ><i class="fas fa-exclamation-triangle form__alert"></i>
+            <span class="form__errors">
+                <i class="fas fa-exclamation-triangle form__alert"></i>
                 <%= errors[error].msg %>
             </span>
             <% } %> <% } %>
@@ -28,6 +28,7 @@
                         <label for="firstname">First Name</label>
                         <input
                             type="text"
+                            id="firstname"
                             name="firstname"
                             tabindex="13"
                             value="<%= locals.old && old.firstName %>"
@@ -60,13 +61,22 @@
                         <label for="passwordC">Repeat Password</label>
                         <input type="password" name="passwordC" tabindex="17" />
                     </div>
+                    <div class="avatar">
+                        <label for="avatar">Upload Avatar</label>
+                        <input
+                            type="file"
+                            name="avatar"
+                            accept="image/png, image/jpeg"
+                            tabindex="18"
+                        />
+                    </div>
                     <div class="form__terms">
                         <input
                             type="checkbox"
                             id="terms"
                             name="terms"
                             value="accept"
-                            tabindex="18"
+                            tabindex="19"
                         />
                         <label for="terms">
                             I agree with the terms and conditions
@@ -76,14 +86,14 @@
                     <button
                         type="submit"
                         class="button__register"
-                        tabindex="19"
+                        tabindex="20"
                     >
                         Register
                     </button>
                 </form>
                 <div class="form__gologin">
                     <span>Already Registered?</span>
-                    <a href="/user/login" tabindex="20">Login</a>
+                    <a href="/user/login" tabindex="21">Login</a>
                 </div>
             </div>
         </main>

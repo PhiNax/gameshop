@@ -1,4 +1,3 @@
-const path = require('path');
 // Call Express Validator module
 const { check } = require('express-validator');
 // Call User Model 
@@ -9,21 +8,9 @@ const validateRegister = [
         .notEmpty().withMessage('Complete your name')
         .isLength({ min: 3 }).withMessage('Your name must have at least 3 characters'),
 
-    check('nickname')
-        .notEmpty().withMessage('Complete your nickname')
-        .isLength({ min: 3 }).withMessage('Your nickname must have at least 3 characters')
-        .custom(async (value) => {
-            const nicknameUsed = await User.findOne({
-                where: {
-                    nickname: value
-                }
-            });
-            if (nicknameUsed) {
-                throw new Error('Nickname not available');
-            }
-
-            return true;
-        }),
+    check('lastname')
+        .notEmpty().withMessage('Complete your lastname')
+        .isLength({ min: 3 }).withMessage('Your lastname must have at least 3 characters'),
 
     check('email')
         .notEmpty().withMessage('Complete your email')

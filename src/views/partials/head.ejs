@@ -9,14 +9,18 @@
     <link rel="stylesheet" href="/css/nav.css" type="text/css" />
     <link rel="stylesheet" href="/css/footer.css" type="text/css" />
 
-    <% if (locals.data) { %> <% if ( locals.data=='details' ) { %>
+    <% if (locals.data) { %> <% if ( locals.data == 'details' ) { %>
     <link rel="stylesheet" href="/css/productDetails.css" type="text/css" />
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
     />
-    <% } else if ( locals.data=='userProfile' ) { %>
+    <% } else if ( locals.data == 'userProfile' ) { %>
     <link rel="stylesheet" href="/css/userProfile.css" type="text/css" />
+    <% } else if ( locals.data == 'register' ) { %>
+    <link rel="stylesheet" href="/css/register.css" type="text/css" />
+    <% } else if ( locals.data == 'login' ) { %>
+    <link rel="stylesheet" href="/css/login.css" type="text/css" />
     <% } %> <% } %>
 
     <!-- Font Awesome CSS -->
