@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 const { User } = require('../database/connectDB');
 
 const validateRegister = [
-    check('name')
+    check('firstname')
         .notEmpty().withMessage('Complete your name')
         .isLength({ min: 3 }).withMessage('Your name must have at least 3 characters'),
 
@@ -42,6 +42,14 @@ const validateRegister = [
             }
             return true;
         }),
+
+    check('terms')
+        .custom((value) => {
+            if (value !== 'accept') {
+                throw new Error('Must accept Terms');
+            }
+            return true;
+        })
 ]
 
 module.exports = validateRegister;

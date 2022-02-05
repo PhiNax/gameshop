@@ -24,7 +24,7 @@
                     method="POST"
                     enctype="multipart/form-data"
                 >
-                    <div class="firstname">
+                    <div>
                         <label for="firstname">First Name</label>
                         <input
                             type="text"
@@ -35,7 +35,7 @@
                             autofocus
                         />
                     </div>
-                    <div class="lastname">
+                    <div>
                         <label for="lastname">Last Name</label>
                         <input
                             type="text"
@@ -44,7 +44,7 @@
                             value="<%= locals.old && old.nickname %>"
                         />
                     </div>
-                    <div class="email">
+                    <div>
                         <label for="email">Email</label>
                         <input
                             type="email"
@@ -53,15 +53,15 @@
                             value="<%= locals.old && old.email %>"
                         />
                     </div>
-                    <div class="password">
+                    <div>
                         <label for="password">Password</label>
                         <input type="password" name="password" tabindex="16" />
                     </div>
-                    <div class="passwordC">
+                    <div>
                         <label for="passwordC">Repeat Password</label>
                         <input type="password" name="passwordC" tabindex="17" />
                     </div>
-                    <div class="avatar">
+                    <div>
                         <label for="avatar">Upload Avatar</label>
                         <input
                             type="file"
