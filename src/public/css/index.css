@@ -1,5 +1,4 @@
 @import "colors.css";
-@import "login.css";
 
 body {
     font-family: Barlow, sans-serif;
@@ -23,7 +22,7 @@ body {
     width: 100%;
     height: auto;
     margin: auto;
-    background-color: var(--white);
+    background-color: var(--main-background);
 }
 
 /* START SLIDER INDEX */
@@ -48,10 +47,10 @@ body {
 }
 .main__title {
     font-size: 1.8rem;
-    color: var(--white);
+    color: var(--whiteC);
     text-align: left;
     font-weight: bold;
-    background-color: var(--red);
+    background-color: var(--bar);
     padding: 5px 10px;
     margin-bottom: 15px;
     border-radius: 0 15px 0 15px;
@@ -66,7 +65,7 @@ body {
 }
 .card__item {
     width: 70%;
-    background-color: #ddd;
+    background-color: var(--whiteC);
     border-radius: 7px;
     box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.75);
 }
@@ -104,14 +103,14 @@ body {
     margin-bottom: 10px;
 }
 .card__addcart {
-    background-color: #0c4591;
+    background-color: var(--blue-button);
     border-color: transparent;
     border-radius: 10px;
     font-size: 0.9rem;
-    color: #fff;
+    color: var(--whiteC);
     width: 30%;
     padding: 5px;
-    box-shadow: 0 2px 6px #1f4d8a;
+    box-shadow: 0 2px 6px var(--blue-shadow);
 }
 /* ENDS CARDS */
 
@@ -125,7 +124,7 @@ body {
     margin-top: 25px;
 }
 .services__card {
-    background-color: #ffff;
+    background-color: var(--whiteC);
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -162,7 +161,7 @@ body {
     .main__title {
         font-size: 1.3rem;
         text-align: left;
-        background-color: var(--red);
+        background-color: var(--bar);
         color: white;
     }
     .cards__container {
@@ -226,7 +225,7 @@ body {
         color: white;
         padding: 10px 20px;
         text-align: left;
-        background-color: var(--red);
+        background-color: var(--bar);
     }
     /* START CARDS */
     .cards__container {
