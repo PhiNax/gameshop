@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 // Call Users controller
 const usersController = require('../controllers/usersController');
-// Call Validator for Register form
-const validateRegister = require('../middleware/registerValidator');
 
-// Call Validator for Login form
+// Validations
+// Call Express-Validator for Register form
+const validateRegister = require('../middleware/registerValidator');
+// Call Express-Validator for Login form
 const validateLogin = require('../middleware/loginValidator')
 
 // Call guestMiddleware to check if user is already registered

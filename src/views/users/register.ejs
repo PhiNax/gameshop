@@ -6,15 +6,6 @@
         <%- include('../partials/header') -%>
 
         <main class="main__register">
-            <div class="errors">
-                <ul></ul>
-            </div>
-            <% if (locals.errors) { %> <% for( let error in errors ) { %>
-            <span class="form__errors">
-                <i class="fas fa-exclamation-triangle form__alert"></i>
-                <%= errors[error].msg %>
-            </span>
-            <% } %> <% } %>
             <div class="card__register">
                 <div class="form__title"><span>Create your Account</span></div>
 
@@ -24,44 +15,111 @@
                     method="POST"
                     enctype="multipart/form-data"
                 >
-                    <div class="firstname">
+                    <div>
                         <label for="firstname">First Name</label>
                         <input
                             type="text"
                             id="firstname"
                             name="firstname"
                             tabindex="13"
-                            value="<%= locals.old && old.firstName %>"
+                            value="<%= locals.old && old.firstname %>"
                             autofocus
                         />
+                        <ul class="fn-errors form__errors__ul">
+                            <% if (locals.errors && errors.firstname) { %>
+                            <li class="form__errors">
+                                <i
+                                    class="fas fa-exclamation-triangle form__alert"
+                                >
+                                </i>
+                                <%= errors.firstname.msg %>
+                            </li>
+                            <% } %>
+                        </ul>
                     </div>
-                    <div class="lastname">
+                    <div>
                         <label for="lastname">Last Name</label>
                         <input
                             type="text"
+                            id="lastname"
                             name="lastname"
                             tabindex="14"
-                            value="<%= locals.old && old.nickname %>"
+                            value="<%= locals.old && old.lastname %>"
                         />
+                        <ul class="ln-errors form__errors__ul">
+                            <% if (locals.errors && errors.lastname) { %>
+                            <li class="form__errors">
+                                <i
+                                    class="fas fa-exclamation-triangle form__alert"
+                                >
+                                </i>
+                                <%= errors.lastname.msg %>
+                            </li>
+                            <% } %>
+                        </ul>
                     </div>
-                    <div class="email">
+                    <div>
                         <label for="email">Email</label>
                         <input
                             type="email"
+                            id="email"
                             name="email"
                             tabindex="15"
                             value="<%= locals.old && old.email %>"
                         />
+                        <ul class="e-errors form__errors__ul">
+                            <% if (locals.errors && errors.email) { %>
+                            <li class="form__errors">
+                                <i
+                                    class="fas fa-exclamation-triangle form__alert"
+                                >
+                                </i>
+                                <%= errors.email.msg %>
+                            </li>
+                            <% } %>
+                        </ul>
                     </div>
-                    <div class="password">
+                    <div>
                         <label for="password">Password</label>
-                        <input type="password" name="password" tabindex="16" />
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            tabindex="16"
+                        />
+                        <ul class="pass-errors form__errors__ul">
+                            <% if (locals.errors && errors.password) { %>
+                            <li class="form__errors">
+                                <i
+                                    class="fas fa-exclamation-triangle form__alert"
+                                >
+                                </i>
+                                <%= errors.password.msg %>
+                            </li>
+                            <% } %>
+                        </ul>
                     </div>
-                    <div class="passwordC">
+                    <div>
                         <label for="passwordC">Repeat Password</label>
-                        <input type="password" name="passwordC" tabindex="17" />
+                        <input
+                            type="password"
+                            id="passwordC"
+                            name="passwordC"
+                            tabindex="17"
+                        />
+                        <ul class="passc-errors form__errors__ul">
+                            <% if (locals.errors && errors.passwordC) { %>
+                            <li class="form__errors">
+                                <i
+                                    class="fas fa-exclamation-triangle form__alert"
+                                >
+                                </i>
+                                <%= errors.passwordC.msg %>
+                            </li>
+                            <% } %>
+                        </ul>
                     </div>
-                    <div class="avatar">
+                    <div>
                         <label for="avatar">Upload Avatar</label>
                         <input
                             type="file"
@@ -82,6 +140,15 @@
                             I agree with the terms and conditions
                         </label>
                     </div>
+                    <ul class="passc-errors form__errors__ul">
+                        <% if (locals.errors && errors.terms) { %>
+                        <li class="form__errors">
+                            <i class="fas fa-exclamation-triangle form__alert">
+                            </i>
+                            <%= errors.terms.msg %>
+                        </li>
+                        <% } %>
+                    </ul>
 
                     <button
                         type="submit"

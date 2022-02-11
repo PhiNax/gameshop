@@ -28,6 +28,11 @@ const controller = {
                 email: req.body.email,
                 password: passCrypt,
             }
+
+            if (req.file) { newUser.avatar = req.file.filename; }
+
+            console.log(newUser);
+
             try {
                 await User.create(newUser);
                 res.redirect('/user/login');

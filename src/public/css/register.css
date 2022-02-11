@@ -30,17 +30,19 @@
     display: block;
     color: #842029;
     background-color: #f8d7da;
-    border-color: #f5c2c7;
     position: relative;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
+    padding: 0.4rem 0.4rem;
+    margin-bottom: 0.2rem;
     border-radius: 7px;
     overflow: hidden;
     animation: zoom-in 0.5s forwards;
 }
+.form__errors__ul {
+    padding-left: 0;
+}
 .form__alert {
     color: #cc091a;
+    padding: 0 5px;
 }
 .form__register input {
     display: block;
@@ -53,6 +55,10 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 10px;
+}
+.form__register input:focus {
+    outline: none !important;
+    border: 2px solid var(--blueC);
 }
 .form__register label {
     padding: 0.5rem;

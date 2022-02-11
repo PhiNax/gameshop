@@ -1,5 +1,9 @@
 /* Color palette */
 :root {
+    --main-background: #e3e3e3;
     --whiteC: #fff;
     --blueC: #0e86ca;
+    --blue-button: #0c4591;
+    --blue-shadow: #1f4d8a;
+    --bar: #32609c;
 }
