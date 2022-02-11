@@ -1,4 +1,5 @@
 window.onload = () => {
+    // Dropdown menu for user profile on navbar
     let userDropdownMenu = document.querySelector('.nav__dropdown__user');
     let userDropdownContent = document.querySelector('.nav__dropdown__content');
 
