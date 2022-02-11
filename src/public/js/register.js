@@ -1,46 +1,69 @@
-window.addEventListener("load", function () {
-  let registerFormulario = document.querySelector(".register-form");
-  registerFormulario.addEventListener("submit", function (e) {
-    let errors = [];
+window.onload = () => {
+  //Function to display errors under inputs
+  function lierr(prop, msg) {
+    return prop.innerHTML += '<li class="form__errors"><i class="fas fa-exclamation-triangle form__alert"></i>' + msg + '</li>';
+  }
 
-    let firstName = document.querySelector(".first-name");
+  // RegExp
+  const emailRegExp = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
 
+  // Select ul errors classes
+  const fnerr = document.querySelector('.fn-errors');
+  const lnerr = document.querySelector('.ln-errors');
+  const eerr = document.querySelector('.e-errors');
+  const perr = document.querySelector('.pass-errors');
+  const pcerr = document.querySelector('.passc-errors');
+
+  // Select inputs from form
+  const firstName = document.getElementById('firstname');
+  const lastName = document.getElementById('lastname');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+  const passwordC = document.getElementById('passwordC');
+
+  // Check inputs validity
+  firstName.addEventListener('blur', () => {
     if (firstName.value == "") {
-      errors.push("Complete your name");
-    } else if (firstName.value.length < 2) {
-      errors.push("Your name must have at least 2 characters");
+      lierr(fnerr, 'Complete your name');
+    } else if (firstName.value.length < 3) {
+      lierr(fnerr, 'Your name must have at least 3 characters');
     }
+  })
 
-    let nickName = document.querySelector(".nickName");
-    if (nickName.value == "") {
-      errors.push("Complete your nickname");
-    } else if (nickName.value.length < 3) {
-      errors.push("Your nickname must have at least 3 characters");
+  lastName.addEventListener('blur', () => {
+    if (lastName.value == "") {
+      lierr(lnerr, 'Complete your lastname');
+    } else if (lastName.value.length < 3) {
+      lierr(lnerr, 'Your lastname must have at least 3 characters');
     }
+  })
 
-    let registerEmail = document.querySelector(".registerEmail");
-    let re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  email.addEventListener('blur', () => {
+    if (email.value == "") {
+      lierr(eerr, 'Complete your email');
+    } else if (!email.value.match(emailRegExp))
+      lierr(eerr, 'Enter a valid email');
+  })
 
-    if (registerEmail.value == "") {
-      errors.push("Complete your email");
-    } else if (re == null) {
-      errors.push("Your email must be valid");
+  password.addEventListener('blur', () => {
+    if (password.value == "") {
+      lierr(perr, 'Password cannot be empty');
+    } else if (password.value.length < 8) {
+      lierr(perr, 'Password must have at least 8 characters');
     }
+  })
 
-    let registerPassword = document.querySelector(".registerPassword");
-    if (registerPassword.value == "") {
-      errors.push("Complete your password");
-    } else if (registerPassword.value.length < 8) {
-      errors.push("Your password must have at least 8 characters");
+  passwordC.addEventListener('blur', () => {
+    if (passwordC.value == "") {
+      lierr(pcerr, 'Password cannot be empty');
+    } else if (passwordC.value.length < 8) {
+      lierr(pcerr, 'Password must have at least 8 characters');
+    } else if (password.value !== passwordC.value) {
+      lierr(pcerr, 'Passwords do not match');
     }
+  })
+  /*setTimeout(() => {
+    fnerr.;
+  }, 5000);*/
 
-    if (errors.length > 0) {
-      e.preventDefault();
-      let ulErrors = document.querySelector("div.erroresRegister ul");
-      for (let i = 0; i < ulErrors.length; i++) {
-        ulErrors.innerHTML += "<li>" + errors[i] + "</li>";
-      }
-    }
-  });
-});
+};

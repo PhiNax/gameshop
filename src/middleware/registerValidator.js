@@ -30,15 +30,15 @@ const validateRegister = [
         }),
 
     check('password')
-        .notEmpty().withMessage('Complete your password')
+        .notEmpty().withMessage('Password cannot be empty')
         .isLength({ min: 8 }).withMessage('Password must have at least 8 characters'),
 
     check('passwordC')
-        .notEmpty().withMessage('Complete your confirmation password')
+        .notEmpty().withMessage('Confirmation password cannot be empty')
         .isLength({ min: 8 }).withMessage('Password must have at least 8 characters')
         .custom((value, { req }) => {
             if (value !== req.body.password) {
-                throw new Error('Password do not match');
+                throw new Error('Passwords do not match');
             }
             return true;
         }),
